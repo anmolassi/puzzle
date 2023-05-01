@@ -1,0 +1,50 @@
+const user = require("../models/user");
+const bcrypt = require("bcryptjs");
+module.exports.logInForm = async function (req, res) {
+  const token = req.cookies.jwt;
+  if (token) {
+    const userr = await user.findOne({
+      tokens: { $elemMatch: { token: token } },
+    });
+    // res.status(200).send(`Welcome! ${userr.first_name} ${userr.last_name}.`);
+    res.locals.user = userr;
+    res.render("user");
+  } else {
+    res.locals.title = "login";
+    res.render("login");
+  }
+};
+
+module.exports.logIn = async function (req, res) {
+  // console.log(req.body);
+  const userr = await user.findOne({ email: req.body.email });
+  console.log("WOW!!!!!!!");
+  if (userr) {
+    const matchPassword = await bcrypt.compare(
+      req.body.password,
+      userr.password
+    );
+    if (matchPassword) {
+      if (userr.verified == true) {
+        const token = await userr.generateAuthToken();
+        console.log(token);
+        res.cookie("jwt", `${token}`, {
+          httpOnly: true,
+          // secure:true
+        });
+        res.locals.user = userr;
+        res.locals.level=userr.levelYN;
+        res.render("gameNavMenu");
+        // res.status(200).send(`Welcome! ${userr.first_name} ${userr.last_name}.`);
+      } else {
+        res.locals.action = "verifyYourself";
+        res.render("action");
+        // res.send('not an verified account, please check verfication email in your inbox/spam folder.')
+      }
+    } else {
+      res.render("login"); //password wrong
+    }
+  } else {
+    res.render("login"); //no user found
+  }
+};

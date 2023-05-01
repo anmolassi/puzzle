@@ -1,0 +1,23 @@
+<html lang="en">
+    <%- include ('head_Tag');%>
+<body>
+    <%- include ('background');%>
+    <div class="levels-admin" style="z-index:5">
+        <% for (let i=0;i<users.length;i++) {%>
+            <a href="/Admin/<%= users[i]._id%>">
+                <hr class="horizontal-bar" />
+                <div class="user-banner">
+                  <span><%= users[i].first_name%> <%= users[i].last_name%></span>
+                  <span><%= users[i].email%></span>
+                  <span>_id: <%= users[i]._id%></span>
+                  <span>verified: <%= users[i].verified%></span>
+                  <span>Active Logins: <%= users[i].tokens.length%></span>
+                </div>
+                <hr class="horizontal-bar" />
+              </a>
+        <% } %>
+    </div>
+    <!-- <script src="/js/index.js"></script> -->
+    <script src="js/forgotPassword.js"></script>
+</body>
+</html>

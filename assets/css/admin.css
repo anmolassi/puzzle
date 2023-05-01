@@ -1,0 +1,28 @@
+.levels-admin{
+    display: flex;
+    flex-direction: column;
+    width:100vw;
+    z-index: 5;
+    position: absolute;
+    height: 90vh;
+    top: 70px;
+    overflow-x: hidden;
+}
+.user-banner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width:100vw;
+    font-size: 1.4vw;
+    padding: 10px 0;
+}
+.user-banner-column{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    width:100vw;
+    color:white;
+    font-size: 1.4vw;
+    padding: 10px 0;
+}

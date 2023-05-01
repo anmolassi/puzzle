@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ('head_Tag');%>
+<body>
+    <%- include ('background');%>
+    <div class="levels" style="z-index:5">
+        <% switch (action) { 
+            case 'checkMail' : %>
+                <h3 class="action_msg">please check verfication email in your inbox/spam folder.</h3>
+                <% break; 
+            case 'verifyYourself' : %>
+                <h3 class="action_msg">not an verified account, please check verfication email in your inbox/spamfolder.</h3>
+                <% break;
+            case 'invalidKey' : %> 
+                <h3 class="action_msg">Invalid key or check for typos in the link</h3>
+                <% break; 
+            case 'wrongLink' : %> 
+                <h3 class="action_msg">Something went wrong.</h3>
+                <% break;
+            case 'nosuchuser' : %> 
+                <h3 class="action_msg">No such user.</h3>
+                <% break; 
+        } %>
+    </div>
+    <!-- <script src="/js/index.js"></script> -->
+    <script src="js/forgotPassword.js"></script>
+</body>
+</html>

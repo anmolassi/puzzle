@@ -1,0 +1,32 @@
+<html lang="en">
+  <%- include ('head_Tag');%>
+  <body>
+    <%- include ('background');%>
+    <div class="levels-admin" style="z-index: 5">
+      <div class="user-banner-column">
+        <span><span style="color:crimson">Name: </span><%= users.first_name%> <%= users.last_name%></span>
+        <br>
+        <span><span style="color:crimson">Email: </span><%= users.email%></span>
+        <br>
+        <span><span style="color:crimson">_id:&nbsp;&nbsp;</span><%= users._id%></span>
+        <br>
+        <span><span style="color:crimson">verified: </span><%= users.verified%></span>
+        <br>
+        <span><span style="color:crimson">Active Logins: </span><%= users.tokens.length%></span>
+        <br>
+        <br>
+        <div style="display:flex;flex-direction: row;justify-content: space-around;width: 100vw;">
+            <% for(let i=1;i<users.levelYN.length;i++) {%>
+                    <% if(users.levelYN[i]==true) { %>
+                        <span style="color:rgb(50, 255, 47)">Level <%=i%></span>
+                    <%}else{%>
+                        <span style="color:rgb(255, 0, 0)">Level <%=i%></span>
+                    <% } %>
+            <% } %>
+        </div>
+      </div>
+    </div>
+    <!-- <script src="/js/index.js"></script> -->
+    <script src="js/forgotPassword.js"></script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ('head_Tag');%>
+<body>
+    <%- include ('background');%>
+    <div class="levels" style="z-index:5">
+        <form action="/register" method="POST">
+            <div>
+              <input type="text" name="first_name" id="first_name" placeholder="First Name" class="input-field"/>
+            </div>
+            <div>
+              <input type="text" name="last_name" id="last_name" placeholder="Last Name" class="input-field"/>
+            </div>
+            <div>
+              <input type="email" name="email" id="email" placeholder="email" class="input-field"/>
+            </div>
+            <div>
+              <input type="password" name="password" id="password" placeholder="Password" class="input-field"/>
+            </div>
+            <div>
+              <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" class="input-field"/>
+            </div>
+            <button type="submit" id="registerMe" class="neon-btn-nav" disabled>Submit</button>
+          </form>
+          <div>
+            <div class="password-conditions">password of atleast length 8</div>
+            <div class="password-conditions">password contains symbols</div>
+            <div class="password-conditions">password contains numbers</div>
+            <div class="password-conditions">password contains capital letters</div>
+            <div class="password-conditions">passwords match</div>
+          </div>
+    </div>
+    <!-- <script src="/js/index.js"></script> -->
+    <script src="/js/password.js"></script>
+</body>
+</html>
