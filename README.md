@@ -1,4 +1,6 @@
 # puzzle
+## https://puzzle-onxq.onrender.com 
+*please wait when opening website as it is deployed on free plan so it may take time to load.*
 ### How to step up project?
 **Step1:** Clone the repository in your editor
 <br>
@@ -34,3 +36,20 @@
 * Successful submission shows user's accuracy and time spent
 * Encryption for storing passwords in database
 * Admin page to access the progress of users
+
+### Goal and Deadends
+<img src="https://user-images.githubusercontent.com/79657095/235725331-8b1f9dfa-0066-41d8-9c1a-c724d1a6d676.png" width="600" height="300">
+
+
+**level 3 in green color represents the goal.**
+<br>
+**level 3 in red color represents the deadends.**
+
+### How to reach the goal?
+**Step1:** Solve the puzzle of level 1
+<br>
+**Step2:** Solve level-2 question on left side. *(In url it is level 2)*
+<br>
+**Step3:** Solve level-3 second question from left side. *(In url it is level 5)*
+<br>
+
