@@ -1,6 +1,8 @@
 # puzzle
 ## https://puzzle-onxq.onrender.com 
 *please wait when opening website as it is deployed on free plan so it may take time to load.*
+### Puzzles
+The puzzles on this website challenges user's capability to relate the things being spoken or shown in the clues with the question to reach the correct answer.
 ### How to step up project?
 **Step1:** Clone the repository in your editor
 <br>
@@ -52,4 +54,13 @@
 <br>
 **Step3:** Solve level-3 second question from left side. *(In url it is level 5)*
 <br>
-
+### Answers
+|   URL level   |    Answers    |
+| ------------- | ------------- |
+|       1       |     fence     |
+|       2       |     breath    |
+|       3       |      fire     |
+|       4       |     silence   |
+|       5       |     future    |
+|       6       |      flag     |
+|       7       |   footprints  |
