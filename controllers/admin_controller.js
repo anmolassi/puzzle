@@ -1,4 +1,6 @@
 const User = require("../models/user");
+const gameProgress=require("../models/gameProgress");
+const timeCalculator=require("../config/timeCalculator");
 const bcrypt = require("bcryptjs");
 module.exports.homePage = async function (req, res) {
     const token = req.cookies.jwt_admin;
@@ -49,6 +51,18 @@ module.exports.adminDetails = async function (req, res) {
         });
         if(userr&&userr.email=='admin@gmail.com'){
             const user = await User.findOne({ _id: req.params.id });
+            let arr = new Array(8).fill(false)
+            for(let i=1;i<8;i++){
+                if(user.levelYN[i]==true){
+                    const gameDetails=await gameProgress.findOne({userId:user._id,level:i});
+                    let timeDiff=await timeCalculator.timeDifference(gameDetails.end_time,gameDetails.start_time);
+                    var obj={};
+                    obj['time']=`${timeDiff.days}:${timeDiff.hours}:${timeDiff.minutes}:${timeDiff.seconds}`;
+                    obj['accuracy']=100/gameDetails.submissions;
+                    arr[i]=obj;
+                }
+            }
+            res.locals.gameDetails=arr;
             res.locals.users = user;
             res.render("adminDetails");
         }else{

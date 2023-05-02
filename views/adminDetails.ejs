@@ -24,27 +24,44 @@
       </div>
   </div>
     <div class="levels-admin" style="z-index: 5">
-      <div class="user-banner-column">
-        <span><span style="color:crimson">Name: </span><%= users.first_name%> <%= users.last_name%></span>
+      <div style="display: flex;justify-content: center;align-items: center;width: 100vw;flex-direction: column;height:100vh">
+        <table style="width:70%;text-align: center;">
+          <tr>
+            <th>_id:</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Active Logins</th>
+          </tr>
+          <tr>
+            <td style="color: var(--clr-neon-gr);"><%= users._id%></td>
+            <td style="color: var(--clr-neon-rd);"><%= users.first_name%> <%= users.last_name%></td>
+            <td style="color: var(--clr-neon-gr);"><%= users.email%></td>
+            <td style="color: var(--clr-neon-rd);"><%= users.tokens.length%></td>
+          </tr>
+        </table>
         <br>
-        <span><span style="color:crimson">Email: </span><%= users.email%></span>
-        <br>
-        <span><span style="color:crimson">_id:&nbsp;&nbsp;</span><%= users._id%></span>
-        <br>
-        <span><span style="color:crimson">verified: </span><%= users.verified%></span>
-        <br>
-        <span><span style="color:crimson">Active Logins: </span><%= users.tokens.length%></span>
-        <br>
-        <br>
-        <div style="display:flex;flex-direction: row;justify-content: space-around;width: 100vw;">
-            <% for(let i=1;i<users.levelYN.length;i++) {%>
-                    <% if(users.levelYN[i]==true) { %>
-                        <span style="color:rgb(50, 255, 47)">Level <%=i%></span>
-                    <%}else{%>
-                        <span style="color:rgb(255, 0, 0)">Level <%=i%></span>
-                    <% } %>
+        <table style="width:70%;text-align: center;">
+          <tr>
+            <th>Level</th>
+            <th>Time</th>
+            <th>Accuracy</th>
+          </tr>
+          <% for(let i=1;i<users.levelYN.length;i++) {%>
+            <% if(users.levelYN[i]==true) { %>
+              <tr style="color: var(--clr-neon-gr);">
+                <td><%=i%></td>
+                <td><%=gameDetails[i].time%></td>
+                <td><%=gameDetails[i].accuracy%></td>
+              </tr>
+            <%}else{%>
+              <tr style="color: var(--clr-neon-rd);">
+                <td><%=i%></td>
+                <td>NULL</td>
+                <td>NULL</td>
+              </tr>
             <% } %>
-        </div>
+          <% } %>
+        </table>
       </div>
     </div>
     <!-- <script src="/js/index.js"></script> -->
