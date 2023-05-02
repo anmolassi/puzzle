@@ -2,22 +2,19 @@
     <%- include ('head_Tag');%>
 <body>
     <%- include ('background');%>
+    <%- include ('secondBanner');%>
     <div class="levels" style="z-index:5">
-      <div id="success">
-        <h1>SUCCESS!!!</h1>
-        <h3 id="accuracy">Accuracy</h3>
-      </div>
-        <h1 id="timeSpent" startTime="<%= start_time %>" style="color:rgb(75, 202, 244)"></h1>
         <form action="" method="POST" id="login_form"class="formlayout">
-            <h1 style="color:rgb(243, 39, 39)">Question 4</h1>
-            <h3 style="color:rgb(75, 202, 244)">Answer:</h3>
+          <h1 class="question">What is so fragile that saying its name breaks it?</h1>
             <input type="hidden" name="user_id" id="user_id" value=<%= userId %>>
             <input type="hidden" name="level" id="level" value="4">
             <div>
               <input type="text" name="answer" id="answer" value="" class="input-field" placeholder="Enter answer" required/>
             </div>
             <br>
-            <button type="submit" class="neon-btn-nav" id="login" >GO!</button>
+            <button type="submit" class="neon-button" id="login" >GO!</button>
+            <a href="https://www.youtube.com/watch?v=Yh49dH9sIEU" target="_blank" class="neon-button-yellow">Clue</a>
+            <a href="/" class="neon-button-red">Back</a>
           </form>
     </div>
     <script src="/js/answerCheck.js"></script>

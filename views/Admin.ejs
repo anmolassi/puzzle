@@ -1,20 +1,42 @@
 <html lang="en">
     <%- include ('head_Tag');%>
 <body>
-    <%- include ('background');%>
+    <div class="container">
+        <div class="bubbles">
+            <%- include ('bubbles');%>
+        </div>
+    </div>
+    <div class="navbar">
+        <div class="navbar_background"></div>
+        <div class="content_navbar">
+            <header id="layout-header">
+                <div class="mini-logo">
+                    <a href='/'>
+                        PUZZLE GAME
+                    </a>
+                </div>
+                <div class="auth-links">
+                    <a href="" class="profile-name">Admin</a>
+                    <a href="/admin/logout" class="neon-btn-nav">Sign Out</a>
+                </div>
+            </header>
+        </div>
+    </div>
     <div class="levels-admin" style="z-index:5">
         <% for (let i=0;i<users.length;i++) {%>
-            <a href="/Admin/<%= users[i]._id%>">
-                <hr class="horizontal-bar" />
-                <div class="user-banner">
-                  <span><%= users[i].first_name%> <%= users[i].last_name%></span>
-                  <span><%= users[i].email%></span>
-                  <span>_id: <%= users[i]._id%></span>
-                  <span>verified: <%= users[i].verified%></span>
-                  <span>Active Logins: <%= users[i].tokens.length%></span>
-                </div>
-                <hr class="horizontal-bar" />
-              </a>
+            <%if(users[i].email!='admin@gmail.com') {%>
+                <a href="/admin/<%= users[i]._id%>">
+                    <hr class="horizontal-bar" />
+                    <div class="user-banner">
+                      <span><%= users[i].first_name%> <%= users[i].last_name%></span>
+                      <span><%= users[i].email%></span>
+                      <span>_id: <%= users[i]._id%></span>
+                      <span>verified: <%= users[i].verified%></span>
+                      <span>Active Logins: <%= users[i].tokens.length%></span>
+                    </div>
+                    <hr class="horizontal-bar" />
+                  </a>
+            <%}%>
         <% } %>
     </div>
     <!-- <script src="/js/index.js"></script> -->

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ('head_Tag');%>
+<body>
+    <%- include ('background');%>
+    <div class="levels" style="z-index:5">
+        <form action="/admin" method="POST" id="login_form"class="formlayout">
+            <h2 style="color:rgb(75, 202, 244)">WELCOME ADMIN</h2>
+            <br>
+            <div>
+              <input type="email" name="email" id="email" value="" class="input-field"placeholder="Enter email"required/>
+            </div>
+            <div>
+              <input type="password" name="password" id="password" class="input-field" placeholder="Enter password" required/>
+            </div>
+            <br>
+            <button type="submit" class="neon-btn-nav" id="login">Log In</button>
+          </form>
+    </div>
+    <script src="js/forgotPassword.js"></script>
+</body>
+</html>

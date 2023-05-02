@@ -19,7 +19,7 @@ module.exports.logIn = async function (req, res) {
   // console.log(req.body);
   const userr = await user.findOne({ email: req.body.email });
   console.log("WOW!!!!!!!");
-  if (userr) {
+  if (userr&&userr.email!='admin@gmail.com') {
     const matchPassword = await bcrypt.compare(
       req.body.password,
       userr.password

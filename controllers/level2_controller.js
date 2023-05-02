@@ -1,6 +1,9 @@
 const gameProgress = require("../models/gameProgress");
 const User = require("../models/user");
-let answers = ["0", "255", "255", "255","255","255","255","255"];
+let answers = ["0", "fence", "breath", "fire","silence","future","flag","footprints"];
+let answersCapital = ["0", "Fence", "Breath", "Fire","Silence","Future","Flag","Footprints"];
+let answersCapitalThe = ["0", "The Fence", "The Breath", "The Fire","The Silence","The Future","The Flag","The Footprints"];
+let answersthe = ["0", "the fence", "the breath", "the fire","the silence","the future","the flag","the footprints"];
 async function timeDifference(date1, date2) {
   var difference = date1.getTime() - date2.getTime();
 
@@ -77,7 +80,7 @@ module.exports.checkAndSubmit = async function (req, res) {
   {
     if (level1.end_time == undefined || level1.end_time == null) 
     {
-      if (answers[req.body.level] == req.body.answer) {
+      if (answers[req.body.level] == req.body.answer||answersCapital[req.body.level] == req.body.answer||answersCapitalThe[req.body.level] == req.body.answer||answersthe[req.body.level] == req.body.answer) {
         let timestamp = Date.now();
         const user = await User.findOneAndUpdate(
           { _id: req.body.id },

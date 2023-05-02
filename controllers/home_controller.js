@@ -6,7 +6,7 @@ module.exports.home = async function (req, res) {
   const token = req.cookies.jwt;
   if(token){
     const userr = await user.findOne({tokens:{$elemMatch:{token:token}}});
-    if(userr){
+    if(userr&&userr.email!='admin@gmail.com'){
       res.locals.user=userr;
       // res.status(200).send(`Welcome! ${userr.first_name} ${userr.last_name}.`);
       // console.log(userr.levelYN);

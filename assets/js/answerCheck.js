@@ -43,7 +43,7 @@ function timerAndSuccess(){
     let answerSubmitted = document.getElementById("answer").value;
     let level = document.getElementById("level").value;
     $.ajax({
-      url: `https://puzzle-onxq.onrender.com/level${level}/`,
+      url: `http://localhost:5000/level${level}/`,
       type: "post",
       data: {
         id: userId,
@@ -56,7 +56,7 @@ function timerAndSuccess(){
       success: async function (data) {
         console.log(data);
         if (data.message == "success") {
-          successBanner.style.display = "block";
+          successBanner.style.display = "flex";
           var accuracy = document.getElementById("accuracy");
           accuracy.innerHTML = `Accuracy: ${data.accuracy}%`;
           console.log(data.time);

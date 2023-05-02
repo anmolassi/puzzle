@@ -3,6 +3,11 @@
     font-size: 14px;
     padding: 1.5vh 0.8vw 0.8vw 1.5vh;
     margin: 5px 0px;
+    background-color: black;
+    border: var(--clr-neon-bl) 0.125em solid;
+    border-radius: 0.25em;
+    color:var(--clr-neon-bl);
+    box-shadow:inset 0 0 0.5em 0 var(--clr-neon-bl), 0 0 0.5em 0 var(--clr-neon-bl);
 }
 #login, #registerMe{
     background: transparent;
@@ -16,4 +21,14 @@
     text-decoration: none;
     color: rgb(233, 44, 44);
     text-shadow:0 0 0.125em hsl(0 0% 100% / 0.3) ;
+}
+.second-head-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    z-index: 6;
+    position: absolute;
+    top:71px;
 }
