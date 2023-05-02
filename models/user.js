@@ -69,21 +69,11 @@ const userSchema = new mongoose.Schema({
 
 userSchema.methods.generateAuthToken = async function () {
     // const token = jwt.sign({ _id: this._id }, process.env.SECRET_KEY); //const anmol
-    const token = jwt.sign({ _id: this._id }, "secretkey_likhdo_koi_v"); //const anmol
+    const token = jwt.sign({ _id: this._id }, process.env.SECRET_KEY); //const anmol
     this.tokens = this.tokens.concat({ token: token }); //token:anmol
     await this.save();
     return token;
 };
-// userSchema.pre("findOneAndUpdate", async function (next) {
-//   console.log("chleyaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-//   const docToUpdate = await this.model.findOne(this.getQuery());
-
-//   docToUpdate.botconfiguration.forEach((item, i) => {
-//     docToUpdate.configuration[i].password = bcrypt.hash(this.password, 10);
-//   });
-//   await docToUpdate.save();
-//   next();
-// });
 userSchema.pre("save", async function (next) {
   if (this.isModified("password")) {
     this.password = await bcrypt.hash(this.password, 10);
