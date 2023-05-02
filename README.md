@@ -27,6 +27,7 @@ The following steps are to run project on localhost.
 <br>
 Access Admin login at url: https://puzzle-onxq.onrender.com/admin
 <br>
+<br>
 
 ### Implemented Features
 * Registration Page for new users
