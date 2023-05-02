@@ -4,6 +4,8 @@
 ### Puzzles
 The puzzles on this website challenges user's capability to relate the things being spoken or shown in the clues with the question to reach the correct answer.
 ### How to step up project?
+The following steps are to run project on localhost.
+<br>
 **Step1:** Clone the repository in your editor
 <br>
 **Step2:** Run *npm install*, if any library doesn't gets installed, then do it manually.
