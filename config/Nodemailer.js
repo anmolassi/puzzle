@@ -22,9 +22,9 @@ async function verifyNewUser(user) {
   console.log(verifydetails);
   let details = {
     // from: process.env.EMAIL,
-    from: "anmolassi01@gmail.com",
+    from: process.env.EMAIL,
     to: `${user.email}`,
-    subject: "Welcome to API and verify yourself",
+    subject: "Welcome to GAME and verify yourself",
     html: `<h2>Hi ${user.first_name} ${user.last_name}, You have successfully signed up.</h2></br>
     <h4>Click on the link to verify yourself.</h4><p><a href="https://puzzle-onxq.onrender.com/verify/${uniquecode}/${verifydetails._id}">Click here</a></p>`
   };
@@ -48,11 +48,11 @@ async function setPasswordMailSend(resetPass) {
   console.log(resetPass);
   let details = {
     // from: process.env.EMAIL,
-    from: "anmolassi01@gmail.com",
+    from: process.env.EMAIL,
     to: `${resetPass.user.email}`,
     subject: "Reset your password",
     html: `<h2>Hi ${resetPass.user.first_name} ${resetPass.user.last_name}, You can reset your password.</h2></br>
-    <h4>Click on the link to reset your password.</h4><p><a href="http://localhost:5000/changePassword/${resetPass.accessToken}">Click here</a></p>`
+    <h4>Click on the link to reset your password.</h4><p><a href="https://puzzle-onxq.onrender.com/changePassword/${resetPass.accessToken}">Click here</a></p>`
   };
   mailTransporter.sendMail(details, (err) => {
     if (err) {
