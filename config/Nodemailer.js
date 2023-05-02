@@ -26,7 +26,7 @@ async function verifyNewUser(user) {
     to: `${user.email}`,
     subject: "Welcome to API and verify yourself",
     html: `<h2>Hi ${user.first_name} ${user.last_name}, You have successfully signed up.</h2></br>
-    <h4>Click on the link to verify yourself.</h4><p><a href="http://localhost:5000/verify/${uniquecode}/${verifydetails._id}">Click here</a></p>`
+    <h4>Click on the link to verify yourself.</h4><p><a href="https://puzzle-onxq.onrender.com/verify/${uniquecode}/${verifydetails._id}">Click here</a></p>`
   };
   mailTransporter.sendMail(details, (err) => {
     if (err) {
