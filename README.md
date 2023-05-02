@@ -23,6 +23,10 @@ The following steps are to run project on localhost.
 **Step8:** Open *localhost:5000* on browser
 <br>
 <br>
+### <span style="color:red">How to access admin?</span>
+<br>
+Access Admin login at url: https://puzzle-onxq.onrender.com/admin
+<br>
 ### Implemented Features
 * Registration Page for new users
 * Login Page for old users
