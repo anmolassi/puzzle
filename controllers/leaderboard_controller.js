@@ -14,9 +14,9 @@ module.exports.leaderboardDetails=async function(req,res){
         }
         gameDetails.sort(function(a,b){
             if(a.accuracy>b.accuracy){
-                return 1;
-            }else if(a.accuracy<b.accuracy){
                 return -1;
+            }else if(a.accuracy<b.accuracy){
+                return 1;
             }else{
                 return (a.time>b.time)?1:-1;
             }
