@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 //connect to the database
 // mongoose.connect('mongodb+srv://assianmol:dashmeshassi@cluster0.385raui.mongodb.net/?retryWrites=true&w=majority');
 // mongodb+srv://aassibe20:dashmeshassi@cluster0.f0po6ro.mongodb.net/test
-mongoose.connect('mongodb+srv://aassibe20:dashmeshassi@cluster0.f0po6ro.mongodb.net/test');
+mongoose.connect(process.env.MONGODB_URL);
 
 // mongoose.connect('mongodb://127.0.0.1/Game_db');
 //acquire the connection(to check if it's successful)
