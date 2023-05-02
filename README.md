@@ -33,8 +33,6 @@ The following steps are to run project on localhost.
 * Progress save of user and easy retrieval on reopening of website
 * Secure Password: Password must be of length atleast 8, contains capital letters, symbols and numbers
 * Timer on each level to track time spent on particular puzzle
-* Timer starts when you first time open the puzzle
-* Timer stops when successful submission is made
 * Leaderboard button on each puzzle to track yourself on leaderboard
 * Clue button on each puzzle
 * Successful submission shows user's accuracy and time spent
