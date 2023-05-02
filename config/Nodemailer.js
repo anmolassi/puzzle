@@ -6,8 +6,8 @@ let mailTransporter = nodemailer.createTransport({
   auth: {
     // user: process.env.EMAIL,
     // pass: process.env.PASSWORD,
-    user: "anmolassi01@gmail.com",
-    pass: "rmedamibzqmthghv",
+    user: process.env.EMAIL,
+    pass: process.env.PASS,
   },
 });
 
