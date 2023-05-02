@@ -5,7 +5,8 @@
     <%- include ('background');%>
     <div class="levels" style="z-index:5">
         <form action="/login" method="POST" id="login_form"class="formlayout">
-            <h2 style="color:rgb(75, 202, 244)">To forgot password enter the email</h2>
+            <h2 style="color:rgb(75, 202, 244)">Login Form</h2>
+            <br>
             <div>
               <input type="email" name="email" id="email" value="" class="input-field"placeholder="Enter email"required/>
             </div>
@@ -16,6 +17,9 @@
             <!-- <a href="" class="neon-btn-nav" id="sub">Log In</a> -->
             <button type="submit" class="neon-btn-nav" id="login">Log In</button>
             <a href="/forgotPassword" class="neon-btn-nav" id="reset" >Forgot Password</a>
+            <br>
+            <br>
+            <span style="color:rgb(244, 159, 75)">Forgot Password? Enter your registered email in above email field</span>
           </form>
     </div>
     <!-- <script src="/js/index.js"></script> -->
