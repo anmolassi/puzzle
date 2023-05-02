@@ -6,7 +6,7 @@
 <br>
 **Step3:** Create *.env* in root directory
 <br>
-**Step4:** Initialize MONGODB_URL, EMAIL, PASS in .env with mongodb connection url, email for nodemailer to send mails, third-party access of email password respectively.
+**Step4:** Initialize MONGODB_URL, EMAIL, PASS, SECRET_KEY in .env with mongodb connection url, email for nodemailer to send mails, third-party access of email password, encryption key for bcrypt respectively.
 <br>
 **Step5:** Open assets->js->answerCheck.js and in line 46 replace *https://puzzle-onxq.onrender.com* with *http://localhost:5000*
 <br>
@@ -32,3 +32,5 @@
 * Leaderboard button on each puzzle to track yourself on leaderboard
 * Clue button on each puzzle
 * Successful submission shows user's accuracy and time spent
+* Encryption for storing passwords in database
+* Admin page to access the progress of users
