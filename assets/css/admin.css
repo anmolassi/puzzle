@@ -28,7 +28,7 @@
 }
 table, th, td {
     border: 1px solid var(--clr-neon-gy);
-    box-shadow:inset 0 0 0.5em 0 var(--clr-neon-gy), 0 0 0.5em 0 var(--clr-neon-gy);
+    box-shadow:inset 0 0 0.2em 0 var(--clr-neon-gy), 0 0 0.3em 0 var(--clr-neon-gy);
     height:40px;
     font-size: 20px;
 }
