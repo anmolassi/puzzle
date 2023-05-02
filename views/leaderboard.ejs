@@ -1,0 +1,26 @@
+<html lang="en">
+    <%- include ('head_Tag');%>
+<body>
+    <%- include ('background');%>
+    <div class="levels" style="z-index:5">
+        <table style="width:70%;text-align: center;">
+            <tr>
+              <th>Name</th>
+              <th>Time</th>
+              <th>Accuracy</th>
+            </tr>
+            <% for(let i=0;i<leaderboard.length;i++) {%>
+                <tr style="color: var(--clr-neon-gr);">
+                  <td><%=leaderboard[i].userId.first_name%> <%=leaderboard[i].userId.lasst_name%></td>
+                  <td><%=leaderboard[i].time%></td>
+                  <td><%=leaderboard[i].accuracy%></td>
+                </tr>
+            <% } %>
+          </table>
+          <br>
+          <br>
+        <a href="/" class="neon-button-red" id="level1">Back</a>
+    </div>
+    <script src="/js/answerCheck.js"></script>
+</body>
+</html>
