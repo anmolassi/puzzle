@@ -35,7 +35,7 @@ Access Admin login at url: https://puzzle-onxq.onrender.com/admin
 * Email verification after registration
 * No login of unverified users
 * Reset Password for old users
-* Auto Login for users if user is opening website repeatedly on same browser
+* Auto Login for users if user is refreshing website repeatedly on same browser
 * Progress save of user and easy retrieval on reopening of website
 * Secure Password: Password must be of length atleast 8, contains capital letters, symbols and numbers
 * Timer on each level to track time spent on particular puzzle
