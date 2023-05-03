@@ -95,7 +95,7 @@ module.exports.checkAndSubmit = async function (req, res) {
           { new: true }
         );
         var data = {
-          accuracy: Math.round(100 / (newlevel.submissions-1)),
+          accuracy: Math.round(100 / (newlevel.submissions)),
           time: await timeDifference(newlevel.end_time, newlevel.start_time),
           message: "success",
         };
