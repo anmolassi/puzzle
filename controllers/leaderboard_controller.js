@@ -18,7 +18,11 @@ module.exports.leaderboardDetails=async function(req,res){
             }else if(a.accuracy<b.accuracy){
                 return 1;
             }else{
-                return (a.time>b.time)?1:-1;
+                var atemp=(a.time).replace(/:/g, '');
+                var btemp=(b.time).replace(/:/g, '');
+                atemp=Number(atemp);
+                btemp=Number(btemp);
+                return (atemp>btemp)?1:-1;
             }
         })
         res.locals.leaderboard=gameDetails;
