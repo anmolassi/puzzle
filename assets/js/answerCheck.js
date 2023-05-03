@@ -68,7 +68,10 @@ function timerAndSuccess(){
             alert("WRONG ANSWER!!!");
         }else{
             console.log(data.startTime)
-            timeBanner.setAttribute('startTime',data.startTime);
+            setTimeout(async function(){
+              timeBanner.setAttribute('startTime',data.startTime);
+            },200)
+            
             startTime=data.startTime;
         }
       },
