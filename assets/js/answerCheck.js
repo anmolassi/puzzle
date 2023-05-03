@@ -55,6 +55,8 @@ function timerAndSuccess(){
       },
       success: async function (data) {
         console.log(data);
+      },
+      complete: async function(data){
         if (data.message == "success") {
           successBanner.style.display = "flex";
           var accuracy = document.getElementById("accuracy");
@@ -69,7 +71,7 @@ function timerAndSuccess(){
             timeBanner.setAttribute('startTime',data.startTime);
             startTime=data.startTime;
         }
-      },
+      }
     });
 }
 goBtn.addEventListener("click", async function (event) {
