@@ -3,9 +3,8 @@ const bcrypt = require("bcryptjs");
 module.exports.logInForm = async function (req, res) {
   const token = req.cookies.jwt;
   if (token) {
-    const userr = await user.findOne({
-      tokens: { $elemMatch: { token: token } },
-    });
+    const id=jwt.decode(token,{complete:true}).payload._id;
+    const userr = await user.findOne({_id:id});
     // res.status(200).send(`Welcome! ${userr.first_name} ${userr.last_name}.`);
     res.locals.user = userr;
     res.render("user");
@@ -30,6 +29,7 @@ module.exports.logIn = async function (req, res) {
         console.log(token);
         res.cookie("jwt", `${token}`, {
           httpOnly: true,
+          maxAge: 7 * 24 * 60 * 60 * 1000,
           // secure:true
         });
         res.locals.user = userr;

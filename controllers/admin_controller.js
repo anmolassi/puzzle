@@ -5,9 +5,8 @@ const bcrypt = require("bcryptjs");
 module.exports.homePage = async function (req, res) {
     const token = req.cookies.jwt_admin;
     if (token) {
-        const userr = await User.findOne({
-        tokens: { $elemMatch: { token: token } },
-        });
+        const id=jwt.decode(token,{complete:true}).payload._id;
+        const userr = await User.findOne({_id:id});
         if(userr&&userr.email=='admin@gmail.com'){
             const users = await User.find({});
             res.locals.users = users;
@@ -30,6 +29,7 @@ module.exports.logIn = async function (req, res) {
             console.log(token);
             res.cookie("jwt_admin", `${token}`, {
             httpOnly: true,
+            maxAge: 7 * 24 * 60 * 60 * 1000,
             });
             const users = await User.find({});
             res.locals.users = users;

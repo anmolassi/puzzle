@@ -29,6 +29,7 @@ const userSchema = new mongoose.Schema({
       token: {
         type: String,
         required: true,
+        expires: 60*60*24*7,
       },
     },
   ],

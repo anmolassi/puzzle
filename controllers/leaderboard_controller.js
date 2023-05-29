@@ -4,7 +4,8 @@ const timeCalculator=require("../config/timeCalculator");
 module.exports.leaderboardDetails=async function(req,res){
     const token = req.cookies.jwt;
     if(token){
-        const userr = await user.findOne({tokens:{$elemMatch:{token:token}}});
+        const id=jwt.decode(token,{complete:true}).payload._id;
+        const userr = await user.findOne({_id:id});
         res.locals.user=userr;
         let gameDetails= await gameProgress.find({level:req.params.level,end_time:{$exists: true}}).populate('userId','first_name last_name');
         for(let i=0;i<gameDetails.length;i++){

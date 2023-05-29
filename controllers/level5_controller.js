@@ -28,9 +28,8 @@ async function timeDifference(date1, date2) {
 module.exports.getPuzzle = async function (req, res) {
   const token = req.cookies.jwt;
   if (token) {
-    const userr = await User.findOne({
-      tokens: { $elemMatch: { token: token } },
-    });
+    const id=jwt.decode(token,{complete:true}).payload._id;
+    const userr = await User.findOne({_id:id});
     if (userr._id == req.params.id) {
       const level1 = await gameProgress.findOne({
         userId: userr._id,
