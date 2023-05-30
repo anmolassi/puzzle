@@ -1,5 +1,6 @@
 const user = require("../models/user");
 const bcrypt = require("bcryptjs");
+const jwt=require('jsonwebtoken');
 module.exports.logInForm = async function (req, res) {
   const token = req.cookies.jwt;
   if (token) {

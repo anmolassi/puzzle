@@ -2,7 +2,6 @@ const user=require('../models/user');
 const gameProgress=require('../models/gameProgress')
 const verifyMail=require('../models/user_verification');
 const mongoose=require('mongoose');
-
 module.exports.verifyUser = async function (req, res) {
   console.log(req.params['code']);
   console.log(req.params['id']);

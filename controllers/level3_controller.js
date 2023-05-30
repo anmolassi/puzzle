@@ -1,5 +1,6 @@
 const gameProgress = require("../models/gameProgress");
 const User = require("../models/user");
+const jwt=require('jsonwebtoken');
 let answers = ["0", "fence", "breath", "fire","silence","future","flag","footprints"];
 let answersCapital = ["0", "Fence", "Breath", "Fire","Silence","Future","Flag","Footprints"];
 let answersCapitalThe = ["0", "The Fence", "The Breath", "The Fire","The Silence","The Future","The Flag","The Footprints"];
