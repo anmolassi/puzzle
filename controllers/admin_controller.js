@@ -2,6 +2,7 @@ const User = require("../models/user");
 const gameProgress=require("../models/gameProgress");
 const timeCalculator=require("../config/timeCalculator");
 const bcrypt = require("bcryptjs");
+const jwt=require('jsonwebtoken');
 module.exports.homePage = async function (req, res) {
     const token = req.cookies.jwt_admin;
     if (token) {
