@@ -30,25 +30,30 @@ module.exports.getPuzzle = async function (req, res) {
   const token = req.cookies.jwt;
   if (token) {
     const id=jwt.decode(token,{complete:true}).payload._id;
-    const userr = await User.findOne({_id:id});
-    if (userr._id == req.params.id) {
-      const level1 = await gameProgress.findOne({
-        userId: userr._id,
-        level: 6,
-      });
-      if (level1.start_time == undefined || level1.start_time == null) {
-        const level = await gameProgress.findOneAndUpdate(
-          { $and: [{ userId: userr.id }, { level: 6 }] },
-          { start_time: Date.now() },
-          { new: true }
-        );
-        console.log(level);
+    const userr = await user.findOne({_id:id,"tokens.token":token});
+    if(userr){
+      if (userr._id == req.params.id) {
+        const level1 = await gameProgress.findOne({
+          userId: userr._id,
+          level: 6,
+        });
+        if (level1.start_time == undefined || level1.start_time == null) {
+          const level = await gameProgress.findOneAndUpdate(
+            { $and: [{ userId: userr.id }, { level: 6 }] },
+            { start_time: Date.now() },
+            { new: true }
+          );
+          console.log(level);
+        }
+        res.locals.start_time = level1.start_time;
+        res.locals.user = userr;
+        res.locals.userId = req.params.id;
+        res.render("level6");
+      } else {
+        res.redirect("/");
       }
-      res.locals.start_time = level1.start_time;
-      res.locals.user = userr;
-      res.locals.userId = req.params.id;
-      res.render("level6");
-    } else {
+    }else{
+      res.clearCookie('jwt');
       res.redirect("/");
     }
   } else {

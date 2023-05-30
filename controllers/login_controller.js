@@ -5,10 +5,15 @@ module.exports.logInForm = async function (req, res) {
   const token = req.cookies.jwt;
   if (token) {
     const id=jwt.decode(token,{complete:true}).payload._id;
-    const userr = await user.findOne({_id:id});
-    // res.status(200).send(`Welcome! ${userr.first_name} ${userr.last_name}.`);
-    res.locals.user = userr;
-    res.render("user");
+    const userr = await user.findOne({_id:id,"tokens.token":token});
+    if(userr){
+      res.locals.user = userr;
+      res.render("user");
+    }else{
+      res.locals.title = "login";
+      res.clearCookie('jwt')
+      res.render("login");
+    }
   } else {
     res.locals.title = "login";
     res.render("login");
