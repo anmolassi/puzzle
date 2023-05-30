@@ -30,7 +30,7 @@ module.exports.getPuzzle = async function (req, res) {
   const token = req.cookies.jwt;
   if (token) {
     const id=jwt.decode(token,{complete:true}).payload._id;
-    const userr = await user.findOne({_id:id,"tokens.token":token});
+    const userr = await User.findOne({_id:id,"tokens.token":token});
     if(userr){
       if (userr._id == req.params.id) {
         const level1 = await gameProgress.findOne({
