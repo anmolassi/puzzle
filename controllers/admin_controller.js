@@ -7,7 +7,7 @@ module.exports.homePage = async function (req, res) {
     const token = req.cookies.jwt_admin;
     if (token) {
         const id=jwt.decode(token,{complete:true}).payload._id;
-        const userr = await user.findOne({_id:id,"tokens.token":token});
+        const userr = await User.findOne({_id:id,"tokens.token":token});
         if(userr&&userr.email=='admin@gmail.com'){
             const users = await User.find({});
             res.locals.users = users;
