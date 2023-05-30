@@ -1,5 +1,6 @@
 const gameProgress=require('../models/gameProgress');
 const user=require('../models/user')
+const jwt=require('jsonwebtoken');
 const timeCalculator=require("../config/timeCalculator");
 module.exports.leaderboardDetails=async function(req,res){
     const token = req.cookies.jwt;
