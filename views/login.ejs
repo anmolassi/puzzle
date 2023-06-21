@@ -3,6 +3,13 @@
     <%- include ('head_Tag');%>
 <body>
     <%- include ('background');%>
+    <%if (locals.error==1) {%>
+      
+      <div style="display: flex;align-items: center;flex-direction: column;justify-content: center;z-index:5;position: absolute;top:90px;width:100vw">
+        <div id="wrongCreds">Wrong Credentials</div>
+      </div>
+      
+      <% } %>
     <div class="levels" style="z-index:5">
         <form action="/login" method="POST" id="login_form"class="formlayout">
             <h2 style="color:rgb(75, 202, 244)">Login</h2>

@@ -48,9 +48,11 @@ module.exports.logIn = async function (req, res) {
         // res.send('not an verified account, please check verfication email in your inbox/spam folder.')
       }
     } else {
+      res.locals.error=1;
       res.render("login"); //password wrong
     }
   } else {
+    res.locals.error=1;
     res.render("login"); //no user found
   }
 };
