@@ -5,7 +5,7 @@ const crypto = require("crypto");
 module.exports.generateForgotMail=async function(req,res){
     try {
         let token = crypto.randomBytes(20).toString("hex");
-        let userr = await User.findOne({ email: req.params.email });
+        let userr = await User.findOne({ email: req.body.email });
         if (userr) {
           let resetPass = await resetPassword.create({
             user: userr._id,
