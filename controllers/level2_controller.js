@@ -85,6 +85,7 @@ module.exports.checkAndSubmit = async function (req, res) {
   {
     if (level1.end_time == undefined || level1.end_time == null) 
     {
+      req.body.answer=req.body.answer.toLowerCase();
       if (answers[req.body.level] == req.body.answer||answersCapital[req.body.level] == req.body.answer||answersCapitalThe[req.body.level] == req.body.answer||answersthe[req.body.level] == req.body.answer) {
         let timestamp = Date.now();
         const user = await User.findOneAndUpdate(
