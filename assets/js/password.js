@@ -2,6 +2,8 @@ const passwordChecker=document.getElementsByClassName('password-conditions');
 const password=document.getElementById('password');
 const registerBtn=document.getElementById('registerMe');
 const confirmPassword=document.getElementById('confirm_password');
+const warning=document.getElementById('warning');
+registerBtn.disabled=false;
 let symbol=0;
 let number=0;
 let capital=0;
@@ -47,10 +49,35 @@ password.addEventListener('keyup',function(event){
         passwordChecker[4].style.color= 'rgb(233, 44, 44)';
         matchDone=0;
     }
-    if(symbol==1&&number==1&&capital==1&&matchDone==1&&length8==1){
-        registerBtn.disabled=false;
+    if(symbol==1&&number==1&&capital==1&&length8==1){
+        password.style.border = "var(--clr-neon-gr) 0.125em solid";
+        password.style.color = "var(--clr-neon-gr)";
+        password.style.boxShadow =
+        "inset 0 0 0.5em 0 var(--clr-neon-gr), 0 0 0.5em 0 var(--clr-neon-gr)";
+        // registerBtn.disabled=false;
     }else{
-        registerBtn.disabled=true;
+        password.style.border = "var(--clr-neon-rd) 0.125em solid";
+        password.style.color = "var(--clr-neon-rd)";
+        password.style.boxShadow =
+        "inset 0 0 0.5em 0 var(--clr-neon-rd), 0 0 0.5em 0 var(--clr-neon-rd)";
+        confirmPassword.style.border = "var(--clr-neon-rd) 0.125em solid";
+        confirmPassword.style.color = "var(--clr-neon-rd)";
+        confirmPassword.style.boxShadow =
+        "inset 0 0 0.5em 0 var(--clr-neon-rd), 0 0 0.5em 0 var(--clr-neon-rd)";
+        // registerBtn.disabled=true;
+    }
+    if(symbol==1&&number==1&&capital==1&&matchDone==1&&length8==1){
+        confirmPassword.style.border = "var(--clr-neon-gr) 0.125em solid";
+        confirmPassword.style.color = "var(--clr-neon-gr)";
+        confirmPassword.style.boxShadow =
+        "inset 0 0 0.5em 0 var(--clr-neon-gr), 0 0 0.5em 0 var(--clr-neon-gr)";
+        // registerBtn.disabled=false;
+    }else{
+        confirmPassword.style.border = "var(--clr-neon-rd) 0.125em solid";
+        confirmPassword.style.color = "var(--clr-neon-rd)";
+        confirmPassword.style.boxShadow =
+        "inset 0 0 0.5em 0 var(--clr-neon-rd), 0 0 0.5em 0 var(--clr-neon-rd)";
+        // registerBtn.disabled=true;
     }
 })
 confirmPassword.addEventListener('keyup',function(event){
@@ -62,10 +89,24 @@ confirmPassword.addEventListener('keyup',function(event){
         matchDone=0;
     }
     if(symbol==1&&number==1&&capital==1&&matchDone==1&&length8==1){
-        registerBtn.disabled=false;
+        confirmPassword.style.border = "var(--clr-neon-gr) 0.125em solid";
+        confirmPassword.style.color = "var(--clr-neon-gr)";
+        confirmPassword.style.boxShadow =
+        "inset 0 0 0.5em 0 var(--clr-neon-gr), 0 0 0.5em 0 var(--clr-neon-gr)";
+        // registerBtn.disabled=false;
     }else{
-        registerBtn.disabled=true;
+        confirmPassword.style.border = "var(--clr-neon-rd) 0.125em solid";
+        confirmPassword.style.color = "var(--clr-neon-rd)";
+        confirmPassword.style.boxShadow =
+        "inset 0 0 0.5em 0 var(--clr-neon-rd), 0 0 0.5em 0 var(--clr-neon-rd)";
+        // registerBtn.disabled=true;
     }
+})
+registerBtn.addEventListener('click',function(){
+    warning.style.display="block";
+    setTimeout(function(){
+        warning.style.display="none";
+    },5000);
 })
 // regexPattern = /^(?=.*[-\#\$\.\%\&\@\!\+\=\<\>\*])(?=.*[a-zA-Z])(?=.*\d).{8,12}$/;
 // Here’s the breakdown of the different parts of the above pattern:

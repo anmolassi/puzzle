@@ -9,6 +9,9 @@
     color:var(--clr-neon-bl);
     box-shadow:inset 0 0 0.5em 0 var(--clr-neon-bl), 0 0 0.5em 0 var(--clr-neon-bl);
 }
+#registerMe{
+    margin-top: 10px;
+}
 #login, #registerMe{
     background: transparent;
 }
@@ -17,7 +20,7 @@
 }
 .password-conditions{
     /* color: red; */
-    font-size: 1.3vw;
+    font-size: 1.0vw;
     text-decoration: none;
     color: rgb(233, 44, 44);
     text-shadow:0 0 0.125em hsl(0 0% 100% / 0.3) ;

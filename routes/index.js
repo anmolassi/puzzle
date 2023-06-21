@@ -20,6 +20,7 @@ router.use('/level4',require('./level4'));
 router.use('/level5',require('./level5'));
 router.use('/level6',require('./level6'));
 router.use('/level7',require('./level7'));
+router.use('/emailCheck',require('./emailCheck'));
 router.use('/admin',require('./admin'));
 router.use('/leaderboard',require('./leaderboard'));
 router.get('/logout',auth,logOutController.logout);  

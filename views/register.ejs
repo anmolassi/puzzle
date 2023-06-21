@@ -4,7 +4,7 @@
 <body>
     <%- include ('background');%>
     <div class="levels" style="z-index:5">
-        <form action="/register" method="POST">
+        <form action="/register" method="POST" style="display: flex;flex-direction: column;align-items: center;">
             <div>
               <input type="text" name="first_name" id="first_name" placeholder="First Name" class="input-field" required/>
             </div>
@@ -13,6 +13,9 @@
             </div>
             <div>
               <input type="email" name="email" id="email" placeholder="email" class="input-field" required/>
+              <div id="invalid_email">invalid email</div>
+              <div id="valid_email">Seems Good</div>
+              <div id="valid_email_exists">Email already exists</div>
             </div>
             <div>
               <input type="password" name="password" id="password" placeholder="Password" class="input-field" required/>
@@ -22,15 +25,18 @@
             </div>
             <button type="submit" id="registerMe" class="neon-btn-nav" disabled>Submit</button>
           </form>
-          <div style="margin-top: 30px;">
+          <div id="warning">
             <div class="password-conditions">-password of atleast length 8</div>
             <div class="password-conditions">-password contains symbols</div>
             <div class="password-conditions">-password contains numbers</div>
             <div class="password-conditions">-password contains capital letters</div>
             <div class="password-conditions">-passwords match</div>
+            <div class="password-conditions">-All fields are Compulsory</div>
           </div>
     </div>
     <!-- <script src="/js/index.js"></script> -->
     <script src="/js/password.js"></script>
+    <script src="/js/email-checker.js"></script>
+    <script src="/js/name-checker.js"></script>
 </body>
 </html>
