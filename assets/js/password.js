@@ -2,9 +2,6 @@ const passwordChecker=document.getElementsByClassName('password-conditions');
 const password=document.getElementById('password');
 const confirmPassword=document.getElementById('confirm_password');
 const warning=document.getElementById('warning');
-var email = document.getElementById("email");
-var validRegexName = /^[a-zA-Z]+$/;
-var validRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 var firstName = document.getElementById("first_name");
 var lastName = document.getElementById("last_name");
 let symbol=0;
@@ -12,9 +9,17 @@ let number=0;
 let capital=0;
 let length8=0;
 let matchDone=0;
+let emailexists=1;
 let symbols=/^(?=.*[-\#\$\.\%\&\@\!\+\=\<\>\*]).{1,}$/;
 let capitals=/^(?=.*[A-Z]).{1,}$/;
 let numbers=/^(?=.*\d).{1,}$/;
+var validRegexName = /^[a-zA-Z]+$/;
+var validRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+const registerBtn = document.getElementById("registerMe");
+var email = document.getElementById("email");
+var invalidEmail = document.getElementById("invalid_email");
+var validEmail = document.getElementById("valid_email");
+var validEmailExists = document.getElementById("valid_email_exists");
 password.addEventListener('keyup',function(event){
     let str=event.target.value;
     if(str.length>=8){
@@ -105,8 +110,50 @@ confirmPassword.addEventListener('keyup',function(event){
         // registerBtn.disabled=true;
     }
 })
+
+email.addEventListener("keyup", function () {
+    if (email.value.match(validRegex)) {
+      $.ajax({
+          url: `https://anmol-assi-puzzle.azurewebsites.net/emailCheck/${email.value}`,
+          // url: `http://localhost:5000/emailCheck/${email.value}`,
+          type: "get",
+          beforeSend: function () {
+            
+          },
+          success: async function (data) {
+              if(data.email==1){
+                  invalidEmail.style.display="none";
+                  validEmailExists.style.display="none";
+                  validEmail.style.display="block";
+                  email.style.border="var(--clr-neon-gr) 0.125em solid";
+                  email.style.color="var(--clr-neon-gr)";
+                  email.style.boxShadow="inset 0 0 0.5em 0 var(--clr-neon-gr), 0 0 0.5em 0 var(--clr-neon-gr)";
+                  emailexists=0;
+                  //Seems good
+              }else{
+                  invalidEmail.style.display="none";
+                  validEmail.style.display="none";
+                  validEmailExists.style.display="block";
+                  email.style.border="var(--clr-neon-rd) 0.125em solid";
+                  email.style.color="var(--clr-neon-rd)";
+                  email.style.boxShadow="inset 0 0 0.5em 0 var(--clr-neon-rd), 0 0 0.5em 0 var(--clr-neon-rd)";
+                  emailexists=1;
+                  //email exsists
+              }
+          },
+        });
+    } else {
+      validEmailExists.style.display="none";
+      validEmail.style.display="none";
+      invalidEmail.style.display="block";
+      email.style.border="var(--clr-neon-rd) 0.125em solid";
+      email.style.color="var(--clr-neon-rd)";
+      email.style.boxShadow="inset 0 0 0.5em 0 var(--clr-neon-rd), 0 0 0.5em 0 var(--clr-neon-rd)";
+      emailexists=1;
+    }
+  });
 registerBtn.addEventListener("click", function (event) {
-    if (!(email.value.match(validRegex) &&firstName.value.match(validRegexName) &&lastName.value.match(validRegexName) &&password.value.match(symbols) &&password.value.match(capitals) &&password.value.match(numbers) &&password.value.length >= 8 &&password.value == confirmPassword.value)) {
+    if (!(email.value.match(validRegex) &&firstName.value.match(validRegexName) &&lastName.value.match(validRegexName) &&password.value.match(symbols) &&password.value.match(capitals) &&password.value.match(numbers) &&password.value.length >= 8 &&password.value == confirmPassword.value&& emailexists==0)) {
       event.preventDefault();
       warning.style.display = "block";
       setTimeout(function () {
