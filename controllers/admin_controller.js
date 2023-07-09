@@ -74,6 +74,22 @@ module.exports.adminDetails = async function (req, res) {
         res.render("action");
     }
 };
+module.exports.deleteUser=async function(req,res){
+    const token = req.cookies.jwt_admin;
+    if (token) {
+        const userr = await User.findOne({
+        tokens: { $elemMatch: { token: token } },
+        });
+        if(userr&&userr.email=='admin@gmail.com'){
+            const deleteUser= await User.findOneAndDelete({_id:req.params.id});
+            res.redirect('/admin');
+        }else{
+            res.redirect('/admin');
+        }
+    }else{
+        res.redirect('/admin');
+    }
+}
 module.exports.logOutAdmin=async function(req,res){
     const token = req.cookies.jwt_admin;
     if (token) {

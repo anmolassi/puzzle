@@ -26,7 +26,7 @@ async function verifyNewUser(user) {
     to: `${user.email}`,
     subject: "Welcome to GAME and verify yourself",
     html: `<h2>Hi ${user.first_name} ${user.last_name}, You have successfully signed up.</h2></br>
-    <h4>Click on the link to verify yourself.</h4><p><a href="https://puzzle-onxq.onrender.com/verify/${uniquecode}/${verifydetails._id}">Click here</a></p>`
+    <h4>Click on the link to verify yourself.</h4><p><a href="${process.env.WEB_URL}/verify/${uniquecode}/${verifydetails._id}">Click here</a></p>`
   };
   mailTransporter.sendMail(details, (err) => {
     if (err) {
@@ -52,7 +52,7 @@ async function setPasswordMailSend(resetPass) {
     to: `${resetPass.user.email}`,
     subject: "Reset your password",
     html: `<h2>Hi ${resetPass.user.first_name} ${resetPass.user.last_name}, You can reset your password.</h2></br>
-    <h4>Click on the link to reset your password.</h4><p><a href="https://puzzle-onxq.onrender.com/changePassword/${resetPass.accessToken}">Click here</a></p>`
+    <h4>Click on the link to reset your password.</h4><p><a href="${process.env.WEB_URL}/changePassword/${resetPass.accessToken}">Click here</a></p>`
   };
   mailTransporter.sendMail(details, (err) => {
     if (err) {

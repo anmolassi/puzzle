@@ -9,7 +9,7 @@ var validRegex =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 email.addEventListener("keyup", function () {
   if (email.value.match(validRegex)) {
     $.ajax({
-        url: `https://puzzle-onxq.onrender.com/emailCheck/${email.value}`,
+        url: `https://anmol-assi-puzzle.azurewebsites.net/emailCheck/${email.value}`,
         // url: `http://localhost:5000/emailCheck/${email.value}`,
         type: "get",
         beforeSend: function () {

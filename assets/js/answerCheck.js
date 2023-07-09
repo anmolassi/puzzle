@@ -43,7 +43,7 @@ function timerAndSuccess(){
     let answerSubmitted = document.getElementById("answer").value;
     let level = document.getElementById("level").value;
     $.ajax({
-      url: `https://puzzle-onxq.onrender.com/level${level}/`,
+      url: `https://anmol-assi-puzzle.azurewebsites.net/level${level}/`,
       type: "post",
       data: {
         id: userId,

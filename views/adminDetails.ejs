@@ -62,9 +62,20 @@
             <% } %>
           <% } %>
         </table>
+        <div  style="margin:40px">
+          <a href="" class="neon-button-red" id="delete-user">Delete User</a>
+        </div>
+      </div>
+      
+      </div>
+      <div id="delete-user-yes-no">
+        <div id="delete-form">
+          <div>Are You sure to delete this user '<%= users.first_name%> <%= users.last_name%>'?</div>
+          <div style="width:30vw;display: flex;justify-content: space-around;"><a href="/admin/deleteUser/<%= users._id%>" id="delete-user-yes">Yes</a><a href="" id="delete-user-no">No</a></div>
+        </div>
       </div>
     </div>
-    <!-- <script src="/js/index.js"></script> -->
+    <script src="/js/admin.js"></script>
     <script src="js/forgotPassword.js"></script>
   </body>
 </html>
