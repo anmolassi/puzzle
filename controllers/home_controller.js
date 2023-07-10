@@ -10,13 +10,22 @@ module.exports.home = async function (req, res) {
     if(userr&&userr.email!='admin@gmail.com'){
       res.locals.user=userr;
       res.locals.level=userr.levelYN;
+      res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+      res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+      res.setHeader("Expires", "0"); // Proxies.
       res.render('gameNavMenu');
     }else{
       res.clearCookie('jwt');
+      res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+      res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+      res.setHeader("Expires", "0"); // Proxies.
       return res.render("welcome");
     }
   }
   else{
+    res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+    res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+    res.setHeader("Expires", "0"); // Proxies.
     return res.render("welcome");
   }
 };

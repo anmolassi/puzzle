@@ -48,21 +48,36 @@ module.exports.getPuzzle = async function (req, res) {
         res.locals.start_time = level1.start_time;
         res.locals.user = userr;
         res.locals.userId = req.params.id;
+        res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+        res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+        res.setHeader("Expires", "0"); // Proxies.
         res.render("level2");
       } else {
+        res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+        res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+        res.setHeader("Expires", "0"); // Proxies.
         res.redirect("/");
       }
     }else{
+      res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+      res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+      res.setHeader("Expires", "0"); // Proxies.
       res.clearCookie('jwt');
       res.redirect("/");
     }
   } else {
+    res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+    res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+    res.setHeader("Expires", "0"); // Proxies.
     res.redirect("/");
   }
 };
 module.exports.checkAndSubmit = async function (req, res) {
   const user = await User.findOne({ _id: req.body.id });
   if (!user) {
+    res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+    res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+    res.setHeader("Expires", "0"); // Proxies.
     res.render("action");
   }
 

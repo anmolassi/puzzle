@@ -11,7 +11,7 @@
             </tr>
             <% for(let i=0;i<leaderboard.length;i++) {%>
                 <tr style="color: var(--clr-neon-gr);">
-                  <td><%=leaderboard[i].userId.first_name%> <%=leaderboard[i].userId.lasst_name%></td>
+                  <td><%=leaderboard[i].userId.first_name%> <%=leaderboard[i].userId.last_name%></td>
                   <td><%=leaderboard[i].time%></td>
                   <td><%=leaderboard[i].accuracy%></td>
                 </tr>
@@ -21,6 +21,6 @@
           <br>
         <a href="/" class="neon-button-red" id="level1">Back</a>
     </div>
-    <script src="/js/answerCheck.js"></script>
+    <script src="/js/index.js"></script>
 </body>
 </html>

@@ -18,11 +18,20 @@ module.exports.generateForgotMail=async function(req,res){
         }
         else{
           res.locals.action='nosuchuser';
+          res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+          res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+          res.setHeader("Expires", "0"); // Proxies.
           res.render('action');
         }
+        res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+        res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+        res.setHeader("Expires", "0"); // Proxies.
         return res.redirect("/");
       } catch (err) {
         console.log("Error", err);
+        res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+        res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+        res.setHeader("Expires", "0"); // Proxies.
         return res.redirect("/");
       }
 }

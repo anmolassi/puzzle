@@ -8,20 +8,32 @@ module.exports.pageToChangePassword=async function(req,res){
         if(resetCheck){
             let user=await User.findOne({_id:resetCheck.user._id});
             if(user){
+              res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+              res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+              res.setHeader("Expires", "0"); // Proxies.
                 return res.render('changePassword', {
                   user: user,
                 });
             }else{
                 res.locals.action='nosuchuser';
+                res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+                res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+                res.setHeader("Expires", "0"); // Proxies.
                 res.render('action');
             }
         }
         else{
           res.locals.action='nosuchuser';
+          res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+          res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+          res.setHeader("Expires", "0"); // Proxies.
           res.render('action');
         }
       } catch (err) {
         console.log("Error", err);
+        res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+        res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+        res.setHeader("Expires", "0"); // Proxies.
         return res.redirect("/");
       }
 }

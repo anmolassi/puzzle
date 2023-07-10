@@ -1,5 +1,6 @@
 const User = require("../models/user");
 const gameProgress=require("../models/gameProgress");
+const resetPassword=require("../models/reset_password");
 const timeCalculator=require("../config/timeCalculator");
 const bcrypt = require("bcryptjs");
 const jwt=require('jsonwebtoken');
@@ -11,6 +12,9 @@ module.exports.homePage = async function (req, res) {
         if(userr&&userr.email=='admin@gmail.com'){
             const users = await User.find({});
             res.locals.users = users;
+            res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+            res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+            res.setHeader("Expires", "0"); // Proxies.
             res.render("Admin");
         }else{
             res.clearCookie('jwt_admin');
@@ -35,6 +39,9 @@ module.exports.logIn = async function (req, res) {
             });
             const users = await User.find({});
             res.locals.users = users;
+            res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+            res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+            res.setHeader("Expires", "0"); // Proxies.
             res.render("Admin");
         }else{
             res.locals.title = "Admin login";
@@ -66,6 +73,9 @@ module.exports.adminDetails = async function (req, res) {
             }
             res.locals.gameDetails=arr;
             res.locals.users = user;
+            res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+            res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+            res.setHeader("Expires", "0"); // Proxies.
             res.render("adminDetails");
         }else{
             res.render("action");
@@ -81,9 +91,17 @@ module.exports.deleteUser=async function(req,res){
         tokens: { $elemMatch: { token: token } },
         });
         if(userr&&userr.email=='admin@gmail.com'){
-            const deleteUser= await User.findOneAndDelete({_id:req.params.id});
+            await User.findOneAndDelete({_id:req.params.id});
+            await gameProgress.deleteMany({userId:req.params.id});
+            await resetPassword.deleteMany({user:req.params.id})
+            res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+            res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+            res.setHeader("Expires", "0"); // Proxies.
             res.redirect('/admin');
         }else{
+            res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+            res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+            res.setHeader("Expires", "0"); // Proxies.
             res.redirect('/admin');
         }
     }else{
@@ -102,11 +120,20 @@ module.exports.logOutAdmin=async function(req,res){
                 console.log(err);
             }}});
             console.log('chlllllllllllll');
+            res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+            res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+            res.setHeader("Expires", "0"); // Proxies.
             res.redirect('/admin');
         }else{
+            res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+            res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+            res.setHeader("Expires", "0"); // Proxies.
             res.redirect('/admin');
         }
     }else{
+        res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+        res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+        res.setHeader("Expires", "0"); // Proxies.
         res.redirect('/admin');
     }
 }

@@ -7,8 +7,9 @@ module.exports.logInForm = async function (req, res) {
     const id=jwt.decode(token,{complete:true}).payload._id;
     const userr = await user.findOne({_id:id,"tokens.token":token});
     if(userr){
-      res.locals.user = userr;
-      res.render("user");
+      res.locals.user=userr;
+      res.locals.level=userr.levelYN;
+      res.render('gameNavMenu');
     }else{
       res.locals.title = "login";
       res.clearCookie('jwt')
@@ -40,10 +41,16 @@ module.exports.logIn = async function (req, res) {
         });
         res.locals.user = userr;
         res.locals.level=userr.levelYN;
+        res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+        res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+        res.setHeader("Expires", "0"); // Proxies.
         res.render("gameNavMenu");
         // res.status(200).send(`Welcome! ${userr.first_name} ${userr.last_name}.`);
       } else {
         res.locals.action = "verifyYourself";
+        res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+        res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+        res.setHeader("Expires", "0"); // Proxies.
         res.render("action");
         // res.send('not an verified account, please check verfication email in your inbox/spam folder.')
       }

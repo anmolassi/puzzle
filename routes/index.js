@@ -3,6 +3,7 @@ const router = express.Router();
 const homeController=require('../controllers/home_controller');
 const logOutController=require('../controllers/logout_controller');
 const auth = require('../middleware/auth');
+const reedirect=require('../middleware/reedirect');
 const user=require('../models/user');
 
 

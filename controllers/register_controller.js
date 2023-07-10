@@ -39,14 +39,23 @@ module.exports.register = async function (req, res) {
       });
       console.log(newuser);
       res.locals.action = "checkMail";
+      res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+      res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+      res.setHeader("Expires", "0"); // Proxies.
       res.render("action");
       Mailer.verifyNewUser(newuser);
     } else {
       // res.send("passwords doesn't match");
+      res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+      res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+      res.setHeader("Expires", "0"); // Proxies.
       res.render('oversmart');
     }
   } else {
     // res.send("email already exists");
+    res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+      res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+      res.setHeader("Expires", "0"); // Proxies.
     res.render('oversmart');
   }
 };

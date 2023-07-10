@@ -3,6 +3,7 @@ const user=require('../models/user')
 const jwt=require('jsonwebtoken');
 const timeCalculator=require("../config/timeCalculator");
 module.exports.leaderboardDetails=async function(req,res){
+    console.log('chelllllleee');
     const token = req.cookies.jwt;
     if(token){
         const id=jwt.decode(token,{complete:true}).payload._id;
@@ -29,13 +30,22 @@ module.exports.leaderboardDetails=async function(req,res){
                 }
             })
             res.locals.leaderboard=gameDetails;
+            res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+            res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+            res.setHeader("Expires", "0"); // Proxies.
             res.render('leaderboard');
         }else{
             res.clearCookie('jwt');
+            res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+            res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+            res.setHeader("Expires", "0"); // Proxies.
             return res.render("welcome");
         }
     }else{
         res.clearCookie('jwt');
+        res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+        res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+        res.setHeader("Expires", "0"); // Proxies.
         return res.render("welcome");
     }
 
