@@ -1,6 +1,5 @@
 # puzzle
-## https://puzzle-onxq.onrender.com 
-*please wait when opening website as it is deployed on free plan so it may take time to load.*
+## https://anmol-assi-puzzle.azurewebsites.net/
 ### Puzzles
 The puzzles on this website challenges user's capability to relate the things being spoken or shown in the clues with the question to reach the correct answer.
 ### How to step up project?
