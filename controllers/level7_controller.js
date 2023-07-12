@@ -49,35 +49,35 @@ module.exports.getPuzzle = async function (req, res) {
         res.locals.user = userr;
         res.locals.userId = req.params.id;
         res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
-      res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
-      res.setHeader("Expires", "0"); // Proxies.
+        res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+        res.setHeader("Expires", "0"); // Proxies.
         res.render("level7");
       } else {
         res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
-      res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
-      res.setHeader("Expires", "0"); // Proxies.
-        res.redirect("/");
+        res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+        res.setHeader("Expires", "0"); // Proxies.
+        res.redirect("/login");
       }
     }else{
       res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
       res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
       res.setHeader("Expires", "0"); // Proxies.
       res.clearCookie('jwt');
-      res.redirect("/");
+      res.redirect("/login");
     }
   } else {
     res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
-      res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
-      res.setHeader("Expires", "0"); // Proxies.
-    res.redirect("/");
+    res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+    res.setHeader("Expires", "0"); // Proxies.
+    res.redirect("/login");
   }
 };
 module.exports.checkAndSubmit = async function (req, res) {
   const user = await User.findOne({ _id: req.body.id });
   if (!user) {
     res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
-      res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
-      res.setHeader("Expires", "0"); // Proxies.
+    res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+    res.setHeader("Expires", "0"); // Proxies.
     res.render("action");
   }
 

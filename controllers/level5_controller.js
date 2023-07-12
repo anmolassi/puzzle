@@ -54,22 +54,22 @@ module.exports.getPuzzle = async function (req, res) {
         res.render("level5");
       } else {
         res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
-      res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
-      res.setHeader("Expires", "0"); // Proxies.
-        res.redirect("/");
+        res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+        res.setHeader("Expires", "0"); // Proxies.
+      res.redirect("/login");
       }
     }else{
       res.clearCookie('jwt');
       res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
       res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
       res.setHeader("Expires", "0"); // Proxies.
-      res.redirect("/");
+      res.redirect("/login");
     }
   } else {
     res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
       res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
       res.setHeader("Expires", "0"); // Proxies.
-    res.redirect("/");
+      res.redirect("/login");
   }
 };
 module.exports.checkAndSubmit = async function (req, res) {
