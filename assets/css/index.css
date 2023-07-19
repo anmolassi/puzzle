@@ -237,3 +237,27 @@
     from {opacity: 1;}
     to {opacity: 0;}
 }
+/* @media screen and (max-width: 400px) {
+    .neon-welcome {
+        font-size: 7vw;
+    }
+} */
+@media screen and (max-width: 850px) {
+    .neon-welcome {
+        font-size: 7.1vw;
+    }
+    .neon-button-green, .neon-button-red, .neon-button-blue, .neon-button-grey, .neon-button-yellow{
+        width: 20vw;
+        font-size: 3.8vw;
+    }
+}
+@media screen and (max-width: 282px) {
+    .levels {
+        height: 80vh;
+        top: 16vh;
+    }
+    .neon-button-green, .neon-button-red, .neon-button-blue, .neon-button-grey, .neon-button-yellow{
+        width: 20vw;
+        font-size: 3.85vw;
+    }
+}

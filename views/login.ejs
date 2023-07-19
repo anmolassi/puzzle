@@ -11,6 +11,8 @@
       
       <% } %>
     <div class="levels" style="z-index:5">
+      <!-- <form action="/forgotPassword" id="forgott"style="display: inline-block;">
+      </form> -->
         <form action="/login" method="POST" id="login_form"class="formlayout">
             <h2 style="color:rgb(75, 202, 244)">Login</h2>
             <br>
@@ -21,13 +23,16 @@
               <input type="password" name="password" id="password" class="input-field" placeholder="Enter password" required/>
             </div>
             <br>
+            <div id="login-forgot-buttons">
+              <button type="submit" form="login_form" class="neon-btn-nav" id="login">Log In</button>
+                <!-- <button type="button" form="forgott" class="neon-btn-nav" id="reset">Forgot Password</button> -->
+              <a href="/forgotPassword" class="neon-btn-nav" id="reset" >Forgot Password</a>
+            </div>
             <!-- <a href="" class="neon-btn-nav" id="sub">Log In</a> -->
-            <button type="submit" class="neon-btn-nav" id="login">Log In</button>
-            <a href="/forgotPassword" class="neon-btn-nav" id="reset" >Forgot Password</a>
-            <br>
             <br>
             <!-- <span style="color:rgb(244, 159, 75)">Forgot Password? Enter your registered email in above email field</span> -->
           </form>
+          
     </div>
     <script src="/js/index.js"></script>
     <!-- <script src="js/forgotPassword.js"></script> -->

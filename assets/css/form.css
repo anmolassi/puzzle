@@ -9,14 +9,25 @@
     color:var(--clr-neon-bl);
     box-shadow:inset 0 0 0.5em 0 var(--clr-neon-bl), 0 0 0.5em 0 var(--clr-neon-bl);
 }
+#login_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+}
 #registerMe{
     margin-top: 10px;
 }
-#login, #registerMe{
+#login, #registerMe, #reset{
     background: transparent;
 }
-#login:hover, #registerMe:hover{
+#login:hover, #registerMe:hover, #reset:hover{
     background: var(--clr-neon);
+}
+#reset{
+    width:12vw;
 }
 .password-conditions{
     /* color: red; */
@@ -34,4 +45,63 @@
     z-index: 6;
     position: absolute;
     top:71px;
+}
+#login-forgot-buttons{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+#reset{
+    width:12vw;
+}
+@media screen and (max-width: 930px) {
+    .neon-btn-nav {
+        width: 16vw;
+        font-size: 2.5vw;
+    }
+    .input-field{
+        padding: 2vw;
+        width: 46vw;
+        font-size: 2.8vw;
+    }
+    #reset {
+        width: 24vw;
+    }
+}
+@media screen and (max-width: 850px) {
+    .input-field{
+        padding: 2vw;
+        width: 46vw;
+        font-size: 3.2vw;
+    }
+    #reset{
+        width:31vw;
+    }
+}
+@media screen and (max-width: 420px) {
+    .neon-btn-nav {
+        width: 22vw;
+        font-size: 3.7vw;
+    }
+    .input-field{
+        width: 61vw;
+        font-size: 4.0vw;
+    }
+    #reset{
+        width:41vw;
+    }
+}
+@media screen and (max-width: 282px) {
+    .input-field{
+        width: 77vw;
+        font-size: 4.9vw;
+    }
+    .neon-btn-nav {
+        width: 25vw;
+        font-size: 5vw;
+    }
 }
