@@ -69,16 +69,24 @@ a{
         font-size: 1.9vw;
     }
     a{
-        font-size: 4.5vh;
+        font-size: 2.5vh;
     }
     .profile-name {
         font-size: 5vw;
     }
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1025px) {
+    a {
+        font-size: 4.2vh;
+    }
+}
+@media screen and (max-width: 913px) {
     .neon-btn-nav{
         width:18vw;
         font-size: 3.0vw;
+    }
+    a{
+        font-size: 3.5vh;
     }
 }
 @media screen and (max-width: 500px) {
@@ -111,7 +119,7 @@ a{
         font-size: 3.1vh;
     }
     #titlee{
-        font-size: 2.1vh;
+        font-size: 3.3vh;
     }
     .profile-name {
         font-size: 6vw;

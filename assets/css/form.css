@@ -58,6 +58,16 @@
 #reset{
     width:12vw;
 }
+@media screen and (max-width: 1025px) {
+    #reset {
+        width: 18vw;
+    }
+    .input-field{
+        padding: 2vw;
+        width: 43vw;
+        font-size: 2.0vw;
+    }
+}
 @media screen and (max-width: 930px) {
     .neon-btn-nav {
         width: 16vw;
