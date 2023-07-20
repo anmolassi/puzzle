@@ -74,8 +74,14 @@ a{
     .profile-name {
         font-size: 5vw;
     }
+    #layout-header{
+        height: 120px;
+    }
 }
 @media screen and (max-width: 1025px) {
+    #layout-header{
+        height: 60px;
+    }
     a {
         font-size: 4.2vh;
     }
@@ -88,11 +94,20 @@ a{
     a{
         font-size: 3.5vh;
     }
+    .navbar_background{
+        height: 90px;
+    }
+    #layout-header{
+        height: 90px;
+    }
 }
 @media screen and (max-width: 500px) {
     .neon-btn-nav{
         width:19vw;
         font-size: 3.7vw;
+    }
+    #layout-header{
+        height: 90px;
     }
 }
 @media screen and (max-width: 420px) {
