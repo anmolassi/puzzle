@@ -9,6 +9,7 @@
     height:70px;
     position: fixed;
     text-align:center;
+    padding: 5px;
 }
 .auth-links{
     z-index: 15;
@@ -98,7 +99,7 @@ a{
         font-size: 4vw;
     }
     a {
-        font-size: 3.2vh;
+        font-size: 2.1vh;
     }
     #layout-header {
         height: 100px;
