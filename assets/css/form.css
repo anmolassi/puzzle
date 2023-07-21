@@ -12,10 +12,14 @@
 #login_form{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     width: auto;
-    height: auto;
+}
+#registerForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 #registerMe{
     margin-top: 10px;
@@ -31,7 +35,7 @@
 }
 .password-conditions{
     /* color: red; */
-    font-size: 1.0vw;
+    font-size: 1.1vw;
     text-decoration: none;
     color: rgb(233, 44, 44);
     text-shadow:0 0 0.125em hsl(0 0% 100% / 0.3) ;
@@ -56,7 +60,7 @@
     margin-left: 10px;
 }
 #reset{
-    width:12vw;
+    width:14vw;
 }
 @media screen and (max-width: 1025px) {
     #reset {
@@ -67,19 +71,42 @@
         width: 43vw;
         font-size: 2.0vw;
     }
+    .password-conditions {
+        font-size: 2.2vw;
+    }
+}
+@media screen and (max-width: 981px) and (min-width:979px) {
+    #warning {
+        top: 150px;
+    }
+    .neon-btn-nav {
+        width: 24vw;
+        font-size: 3.7vw;
+    }
+    .password-conditions {
+        font-size: 3vw;
+    }
+    #reset {
+        width: 41vw;
+    }
+    .input-field {
+        padding: 3vw;
+        width: 58vw;
+        font-size: 2.9vw;
+    }
 }
 @media screen and (max-width: 930px) {
     .neon-btn-nav {
-        width: 16vw;
-        font-size: 2.5vw;
+        width: 21.5vw;
+        font-size: 3.6vw;
     }
     .input-field{
         padding: 2vw;
         width: 46vw;
-        font-size: 2.8vw;
+        font-size: 3.8vw;
     }
     #reset {
-        width: 24vw;
+        width: 35vw;
     }
 }
 @media screen and (max-width: 850px) {
@@ -89,20 +116,49 @@
         font-size: 3.2vw;
     }
     #reset{
-        width:31vw;
+        width:34vw;
+    }
+    .password-conditions {
+        font-size: 2.5vw;
+    }
+    
+}
+@media screen and (max-width: 541px) {
+    .password-conditions {
+        font-size: 1.9vw;
+    }
+    #warning {
+        right: 10px;
+    }
+}
+@media screen and (max-width: 513px) {
+    .password-conditions {
+        font-size: 2.2vw;
+    }
+    #warning {
+        top: 20px;
     }
 }
 @media screen and (max-width: 420px) {
+    #warning {
+        top: 80px;
+    }
     .neon-btn-nav {
-        width: 22vw;
-        font-size: 3.7vw;
+        width: 27.5vw;
+        font-size: 4.5vw;
     }
     .input-field{
         width: 61vw;
         font-size: 4.0vw;
     }
     #reset{
-        width:41vw;
+        width:43vw;
+    }
+    .password-conditions {
+        font-size: 3.5vw;
+    }
+    #registerForm{
+        margin-top: 11vh;
     }
 }
 @media screen and (max-width: 282px) {

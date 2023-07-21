@@ -63,6 +63,12 @@ a{
     color: rgb(60, 168, 241);
     text-shadow:0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor ;
 }
+@media screen and (max-width: 1281px) {
+    .neon-btn-nav{
+        width: 9vw;
+        font-size: 1.5vw;
+    }
+}
 @media screen and (max-width: 1200px) {
     .neon-btn-nav{
         width: 12vw;
@@ -72,7 +78,7 @@ a{
         font-size: 2.5vh;
     }
     .profile-name {
-        font-size: 5vw;
+        font-size: 4.3vw;
     }
     #layout-header{
         height: 120px;
@@ -83,7 +89,22 @@ a{
         height: 60px;
     }
     a {
-        font-size: 4.2vh;
+        font-size: 3.2vh;
+    }
+}
+@media screen and (max-width: 981px) {
+    .neon-btn-nav {
+        width: 23vw;
+        font-size: 4vw;
+    }
+    a {
+        font-size: 3.2vh;
+    }
+    #layout-header {
+        height: 100px;
+    }
+    #reset {
+        width: 32vw;
     }
 }
 @media screen and (max-width: 913px) {
@@ -91,14 +112,14 @@ a{
         width:18vw;
         font-size: 3.0vw;
     }
-    a{
-        font-size: 3.5vh;
+    a {
+        font-size: 4.4vh;
     }
     .navbar_background{
-        height: 90px;
+        height: 80px;
     }
     #layout-header{
-        height: 90px;
+        height: 80px;
     }
 }
 @media screen and (max-width: 500px) {
@@ -118,11 +139,14 @@ a{
     a{
         font-size: 4.1vh;
     }
-    #titlee{
-        font-size: 3.0vh;
+    #titlee {
+        font-size: 2.5vh;
     }
     .profile-name {
         font-size: 6.2vw;
+    }
+    #layout-header{
+        height: 80px;
     }
 }
 @media screen and (max-width: 282px) {
