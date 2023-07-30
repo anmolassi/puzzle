@@ -1,18 +1,21 @@
 <html lang="en">
     <%- include ('head_Tag');%>
+    <head>
+        <link rel="stylesheet" href="/css/levels.css">
+    </head>
 <body>
     <%- include ('background');%>
-    <%- include ('secondBanner');%>
-    <div class="levels" style="z-index:5">
-        <form action="" method="POST" id="login_form"class="formlayout">
-            <h1 class="question">What runs around the whole yard without moving?</h1>
+    <div class="levels">
+        <%- include ('secondBanner');%>
+        <form action="" method="POST" class="formlayout form_levelwise">
+            <div class="question">What runs around the whole yard without moving?</div>
             <input type="hidden" name="user_id" id="user_id" value=<%= userId %>>
             <input type="hidden" name="level" id="level" value="1">
             <input type="text" name="answer" id="answer" value="" class="input-field" placeholder="Enter answer" required/>
-            <button type="submit" class="neon-button" id="login" >GO!</button>
-            <a href="https://www.youtube.com/shorts/dVOB3vuqErU" target="_blank" class="neon-button-yellow" id="level1">Clue</a>
-            <a href="/" class="neon-button-red" id="level1">Back</a>
-            <a href="/leaderboard/1" class="neon-button-blue" >leaderboard</a>
+            <button type="submit" class="neon-button level-btn-width" id="login">GO!</button>
+            <a href="https://www.youtube.com/shorts/dVOB3vuqErU" target="_blank" class="neon-button-yellow level-btn-width" id="level1">Clue</a>
+            <a href="/" class="neon-button-red level-btn-width" id="level1">Back</a>
+            <a href="/leaderboard/1" class="neon-button-blue level-btn-width" >leaderboard</a>
           </form>
     </div>
     <script src="/js/index.js"></script>

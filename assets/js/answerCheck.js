@@ -3,8 +3,10 @@ var timeBanner = document.getElementById("timeSpent");
 var startTime ;
 console.log(startTime)
 
-let successBanner = document.getElementById("success");
-successBanner.style.display = "none";
+let successBanner = document.getElementsByClassName("success");
+successBanner[1].style.display = "none";
+successBanner[2].style.display = "none";
+
 // startTime= new Date(parseInt(startTime,10));
 async function timeDifference(date1, date2) {
     // console.log(date1)
@@ -44,6 +46,8 @@ function timerAndSuccess(){
     let level = document.getElementById("level").value;
     $.ajax({
       url: `https://anmol-assi-puzzle.azurewebsites.net/level${level}/`,
+      // url: `http://localhost:8080/level${level}/`,
+
       type: "post",
       data: {
         id: userId,
@@ -51,12 +55,14 @@ function timerAndSuccess(){
         level: level,
       },
       beforeSend: function () {
-        successBanner.style.display = "none";
+        successBanner[1].style.display = "none";
+        successBanner[2].style.display = "none";
       },
       success: async function (data) {
         console.log(data);
         if (data.message == "success") {
-          successBanner.style.display = "flex";
+          successBanner[1].style.display = "flex";
+          successBanner[2].style.display = "flex";
           var accuracy = document.getElementById("accuracy");
           setTimeout(async function(){
             accuracy.innerHTML = `Accuracy: ${data.accuracy}%`;

@@ -1,18 +1,21 @@
 <html lang="en">
     <%- include ('head_Tag');%>
+    <head>
+      <link rel="stylesheet" href="/css/levels.css">
+  </head>
 <body>
     <%- include ('background');%>
-    <%- include ('secondBanner');%>
-    <div class="levels" style="z-index:5">
-        <form action="" method="POST" id="login_form"class="formlayout">
-          <h2 class="question">I am not alive, but I grow; I don't have lungs, but I need air; I don't have a mouth, but water kills me. What am I?</h2>
+    <div class="levels">
+      <%- include ('secondBanner');%>
+        <form action="" method="POST" id="login_form"class="formlayout form_levelwise">
+          <h2 class="question2">I am not alive, but I grow; I don't have lungs, but I need air; I don't have a mouth, but water kills me. What am I?</h2>
             <input type="hidden" name="user_id" id="user_id" value=<%= userId %>>
             <input type="hidden" name="level" id="level" value="3">
             <input type="text" name="answer" id="answer" value="" class="input-field" placeholder="Enter answer" required/>
-            <button type="submit" class="neon-button" id="login" >GO!</button>
-            <a href="https://www.britannica.com/science/wildfire" target="_blank" class="neon-button-yellow">Clue</a>
-            <a href="/" class="neon-button-red">Back</a>
-            <a href="/leaderboard/3" class="neon-button-blue" >leaderboard</a>
+            <button type="submit" class="neon-button level-btn-width" id="login" >GO!</button>
+            <a href="https://www.britannica.com/science/wildfire" target="_blank" class="neon-button-yellow level-btn-width">Clue</a>
+            <a href="/" class="neon-button-red level-btn-width">Back</a>
+            <a href="/leaderboard/3" class="neon-button-blue level-btn-width" >leaderboard</a>
           </form>
     </div>
     <script src="/js/index.js"></script>

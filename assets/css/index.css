@@ -1,3 +1,6 @@
+html{
+    font-size: 62.5%;
+}
 :root{
     --clr-neon: hsl(317 100% 54%);
     --clr-neon-gr: hsl(125, 100%, 54%);
@@ -12,7 +15,7 @@
     top:0;
     z-index: 10;
     color:white;
-    font-size: 40px;
+    font-size: 4rem;
 }
 .navbar_background{
     position: fixed;
@@ -20,8 +23,8 @@
     opacity: 0.5;
     z-index: 9;
     width: 100vw;
-    height: 70px;
-    padding: 5px;
+    height: 7.7rem;
+    padding: 0.5rem;
 }
 .content_navbar{
     position: absolute;
@@ -47,8 +50,8 @@
     margin-top: 15vh;
 }
 .neon-button{
-    width: 14vw;
-    font-size: 2vw;
+    width: 12.1rem;
+    font-size: 2.2rem;
     cursor: pointer;
     text-decoration: none;
     color: var(--clr-neon);
@@ -60,8 +63,8 @@
     box-shadow:inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
 }
 .neon-button-green{
-    width: 14vw;
-    font-size: 2vw;
+    width: 12.5rem;
+    font-size: 2.2rem;
     cursor: pointer;
     text-decoration: none;
     color: var(--clr-neon-gr);
@@ -79,8 +82,8 @@
 }
 
 .neon-button-yellow{
-    width: 14vw;
-    font-size: 2vw;
+    width: 12.5rem;
+    font-size: 2.2rem;
     cursor: pointer;
     text-decoration: none;
     color: var(--clr-neon-yl);
@@ -97,8 +100,8 @@
     text-shadow: none;
 }
 .neon-button-red{
-    width: 14vw;
-    font-size: 2vw;
+    width: 12.5rem;
+    font-size: 2.2rem;
     cursor: pointer;
     text-decoration: none;
     color: var(--clr-neon-rd);
@@ -115,8 +118,8 @@
     text-shadow: none;
 }
 .neon-button-blue{
-    width: 14vw;
-    font-size: 2vw;
+    width: 12.5rem;
+    font-size: 2.2rem;
     cursor: pointer;
     text-decoration: none;
     color: var(--clr-neon-bl);
@@ -134,9 +137,9 @@
 }
 .neon-button-grey{
     opacity: 0.3;
-    width: 14vw;
+    width: 12.5rem;
+    font-size: 2.2rem;
     pointer-events: none;
-    font-size: 2vw;
     cursor: pointer;
     text-decoration: none;
     color: var(--clr-neon-gy);
@@ -154,7 +157,7 @@
 }
 .neon-welcome{
     width: 90vw;
-    font-size: 6vw;
+    font-size: 11rem;
     color: var(--clr-neon);
     text-align: center;
     padding: 0.25em 1em;
@@ -165,23 +168,37 @@
     font-size: 3vw;
     text-shadow:0 0 0.3em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor ;
 }
-#success{
+.success{
     color: greenyellow;
-    font-size: 30px;
+    font-size: 2.5rem;
     display: flex;
     flex-direction: row;
-    width: 46vw;
-    justify-content: space-between;
+    width: 32vw;
+    justify-content: space-around;
     color: var(--clr-neon-gr);
-    text-shadow:0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--clr-neon-gr) ;
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--clr-neon-gr);
 }
 .timeSpentBanner{
     color:var(--clr-neon-bl);
     text-shadow:0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--clr-neon-bl);
 }
 .question{
+    font-size: 3.2rem;
     color: var(--clr-neon-rd);
     text-shadow:0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--clr-neon-rd);
+    padding: 1rem;
+}
+.question2{
+    font-size: 2.7rem;
+    color: var(--clr-neon-rd);
+    text-shadow:0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--clr-neon-rd);
+    padding: 1rem;
+}
+.question3{
+    font-size: 2.7rem;
+    color: var(--clr-neon-rd);
+    text-shadow:0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--clr-neon-rd);
+    padding: 1rem;
 }
 #invalid_email{
     display: none;
@@ -209,8 +226,8 @@
 }
 #warning{
     position: absolute;
-    top:80px;
-    right:60px; 
+    top:8rem;
+    right:3rem; 
     display: none;
     animation-name: opacityControl;
     animation-duration: 6s;
@@ -219,15 +236,15 @@
     padding: 9px;
     box-shadow:inset 0 0 0.5em 0 var(--clr-neon-bl), 0 0 0.5em 0 var(--clr-neon-bl);
 }
-#wrongCreds{
-    color:red;
+#wrongCreds {
+    color: red;
     background-color: rgb(252, 132, 132);
-    width:80vw;
-    height:50px;
+    width: 80vw;
+    height: 5rem;
     display: flex;
     align-items: center;
-    padding-left: 20px;
-    font-size: 1.5vw;
+    padding-left: 2rem;
+    font-size: 2.2rem;
     animation-name: opacityControl;
     animation-duration: 4.5s;
     animation-iteration-count: 1;
@@ -237,12 +254,38 @@
     from {opacity: 1;}
     to {opacity: 0;}
 }
+@media screen and (max-width: 998px) {
+    html{
+        font-size: 55%;
+    }
+}
+@media screen and (max-width: 768px) {
+    html{
+        font-size: 45%;
+    }
+    .neon-welcome {
+        width: 33rem;
+        font-size: 5rem;
+    }
+    .level-access-btn {
+        width: 11.5rem;
+        font-size: 2.0rem;
+    }
+    #success-mobile{
+        display: none !important;
+    }
+}
+@media screen and (max-width: 400px) {
+    .neon-welcome {
+        font-size: 7vw;
+    }
+}
 /* @media screen and (max-width: 400px) {
     .neon-welcome {
         font-size: 7vw;
     }
 } */
-@media screen and (max-width: 1081px) {
+/* @media screen and (max-width: 1081px) {
     .navbar_background{
         height: 120px;
     }
@@ -306,4 +349,4 @@
         width: 20vw;
         font-size: 3.85vw;
     }
-}
+} */

@@ -4,75 +4,75 @@
     <%- include ('background');%>
     <div class="levels">
         <% if (locals.level[1]){ %>
-        <a href="/level1/<%= user._id%>" class="neon-button-green" id="level1">Level 1</a>
+        <a href="/level1/<%= user._id%>" class="neon-button-green level-access-btn" id="level1">Level 1</a>
         <% }else{ %>
-            <a href="/level1/<%= user._id%>" class="neon-button-yellow" id="level1">Level 1</a>
+            <a href="/level1/<%= user._id%>" class="neon-button-yellow level-access-btn" id="level1">Level 1</a>
         <% } %>
 
 
 
         <div class="next_levels">
             <% if (locals.level[1]&& locals.level[2]==false){ %>
-                <a href="/level2/<%= user._id%>" class="neon-button-yellow" id="level2">Level 2</a>
+                <a href="/level2/<%= user._id%>" class="neon-button-yellow level-access-btn" id="level2">Level 2</a>
             <% } %>
             <% if (locals.level[1]&& locals.level[2]){ %>
-            <a href="/level2/<%= user._id%>" class="neon-button-green"  id="level2">Level 2</a>
+            <a href="/level2/<%= user._id%>" class="neon-button-green level-access-btn"  id="level2">Level 2</a>
             <% } %>
             <% if (locals.level[1]==false&& locals.level[2]==false){ %>
-                <a href="#" class="neon-button-grey"  id="level2">Level 2</a>
+                <a href="#" class="neon-button-grey level-access-btn"  id="level2">Level 2</a>
             <% } %>
 
             <% if (locals.level[1]&& locals.level[3]==false){ %>
-                <a href="/level3/<%= user._id%>" class="neon-button-yellow" id="level3">Level 2</a>
+                <a href="/level3/<%= user._id%>" class="neon-button-yellow level-access-btn" id="level3">Level 2</a>
             <% } %>
             <% if (locals.level[1]&& locals.level[3]){ %>
-            <a href="/level3/<%= user._id%>" class="neon-button-green"  id="level3">Level 2</a>
+            <a href="/level3/<%= user._id%>" class="neon-button-green level-access-btn"  id="level3">Level 2</a>
             <% } %>
             <% if (locals.level[1]==false&& locals.level[3]==false){ %>
-                <a href="#" class="neon-button-grey"  id="level3">Level 2</a>
+                <a href="#" class="neon-button-grey level-access-btn"  id="level3">Level 2</a>
             <% } %>
         </div>
 
 
         <div class="next_levels">
             <% if (locals.level[2]&& locals.level[4]==false){ %>
-                <a href="/level4/<%= user._id%>" class="neon-button-yellow" id="level4">Level 3</a>
+                <a href="/level4/<%= user._id%>" class="neon-button-yellow level-access-btn" id="level4">Level 3</a>
             <% } %>
             <% if (locals.level[2]&& locals.level[4]){ %>
-            <a href="/level4/<%= user._id%>" class="neon-button-red"  id="level4">Level 3</a>
+            <a href="/level4/<%= user._id%>" class="neon-button-red level-access-btn"  id="level4">Level 3</a>
             <% } %>
             <% if (locals.level[2]==false&& locals.level[4]==false){ %>
-                <a href="#" class="neon-button-grey"  id="level4">Level 3</a>
+                <a href="#" class="neon-button-grey level-access-btn"  id="level4">Level 3</a>
             <% } %>
 
             <% if (locals.level[2]&& locals.level[5]==false){ %>
-                <a href="/level5/<%= user._id%>" class="neon-button-yellow" id="level5">Level 3</a>
+                <a href="/level5/<%= user._id%>" class="neon-button-yellow level-access-btn" id="level5">Level 3</a>
             <% } %>
             <% if (locals.level[2]&& locals.level[5]){ %>
-            <a href="/level5/<%= user._id%>" class="neon-button-green" id="level5">Level 3</a>
+            <a href="/level5/<%= user._id%>" class="neon-button-green level-access-btn" id="level5">Level 3</a>
             <% } %>
             <% if (locals.level[2]==false&& locals.level[5]==false){ %>
-                <a href="#" class="neon-button-grey" id="level5">Level 3</a>
+                <a href="#" class="neon-button-grey level-access-btn" id="level5">Level 3</a>
             <% } %>
 
             <% if (locals.level[3]&& locals.level[6]==false){ %>
-                <a href="/level6/<%= user._id%>" class="neon-button-yellow" id="level6">Level 3</a>
+                <a href="/level6/<%= user._id%>" class="neon-button-yellow level-access-btn" id="level6">Level 3</a>
             <% } %>
             <% if (locals.level[3]&& locals.level[6]){ %>
-            <a href="/level6/<%= user._id%>" class="neon-button-red"  id="level6">Level 3</a>
+            <a href="/level6/<%= user._id%>" class="neon-button-red level-access-btn"  id="level6">Level 3</a>
             <% } %>
             <% if (locals.level[3]==false&& locals.level[6]==false){ %>
-                <a href="#" class="neon-button-grey" id="level6">Level 3</a>
+                <a href="#" class="neon-button-grey level-access-btn" id="level6">Level 3</a>
             <% } %>
 
             <% if (locals.level[3]&& locals.level[7]==false){ %>
-                <a href="/level7/<%= user._id%>" class="neon-button-yellow" id="level7">Level 3</a>
+                <a href="/level7/<%= user._id%>" class="neon-button-yellow level-access-btn" id="level7">Level 3</a>
             <% } %>
             <% if (locals.level[3]&& locals.level[7]){ %>
-            <a href="/level7/<%= user._id%>" class="neon-button-red" id="level7">Level 3</a>
+            <a href="/level7/<%= user._id%>" class="neon-button-red level-access-btn" id="level7">Level 3</a>
             <% } %>
             <% if (locals.level[3]==false&& locals.level[7]==false){ %>
-                <a href="#" class="neon-button-grey" id="level7">Level 3</a>
+                <a href="#" class="neon-button-grey level-access-btn" id="level7">Level 3</a>
             <% } %>
         </div>
     </div>
