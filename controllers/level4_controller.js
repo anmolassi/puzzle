@@ -51,6 +51,8 @@ module.exports.getPuzzle = async function (req, res) {
         res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
         res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
         res.setHeader("Expires", "0"); // Proxies.
+        res.setHeader("Cross-Origin-Embedder-Policy","credentialess")
+        res.setHeader("Content-Security-Policy", "default-src 'self' https://www.youtube.com/embed/; style-src 'self' 'unsafe-inline'; frame-src 'self' https://www.youtube.com/embed/ ;img-src 'self' https://i.ytimg.com/ ;connect-src 'self'  https://anmol-assi-puzzle.azurewebsites.net/level1/;script-src 'self' 'unsafe-inline'");
         res.render("level4");
       } else {
         res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.

@@ -36,6 +36,7 @@ module.exports.logIn = async function (req, res) {
             res.cookie("jwt_admin", `${token}`, {
             httpOnly: true,
             maxAge: 7 * 24 * 60 * 60 * 1000,
+            sameSite: 'strict'
             });
             const users = await User.find({});
             res.locals.users = users;

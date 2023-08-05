@@ -46,6 +46,7 @@ module.exports.setNewPassword=async function(req,res){
   res.cookie("jwt", `${token}`, {
       httpOnly: true,
       maxAge: 7 * 24 * 60 * 60 * 1000,
+      sameSite: 'strict'
       // secure:true
   });
   res.redirect('/');

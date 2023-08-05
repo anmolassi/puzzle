@@ -27,11 +27,14 @@ html{
 #registerMe{
     margin-top: 1rem;
 }
-#login, #registerMe, #reset{
+#login, #registerMe, #reset, #clue{
     background: transparent;
 }
 #login:hover, #registerMe:hover, #reset:hover{
     background: var(--clr-neon);
+}
+#clue:hover{
+    background: var(--clr-neon-yl);
 }
 .password-conditions{
     /* color: red; */

@@ -1,9 +1,15 @@
+<!DOCTYPE html>
 <html lang="en">
     <%- include ('head_Tag');%>
     <head>
         <link rel="stylesheet" href="/css/levels.css">
     </head>
 <body>
+    <div class="clue-video">
+        <div id="svg-cross"><svg xmlns="http://www.w3.org/2000/svg" height="5rem" viewBox="0 0 384 512"><path fill="white" d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg>
+        </div>
+        <iframe src="https://www.youtube.com/embed/dVOB3vuqErU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+    </div>
     <%- include ('background');%>
     <div class="levels">
         <%- include ('secondBanner');%>
@@ -13,12 +19,14 @@
             <input type="hidden" name="level" id="level" value="1">
             <input type="text" name="answer" id="answer" value="" class="input-field" placeholder="Enter answer" required/>
             <button type="submit" class="neon-button level-btn-width" id="login">GO!</button>
-            <a href="https://www.youtube.com/shorts/dVOB3vuqErU" target="_blank" class="neon-button-yellow level-btn-width" id="level1">Clue</a>
+            <button type="submit" class="neon-button-yellow level-btn-width" id="clue">Clue</button>
+            <!-- <a href="https://www.youtube.com/shorts/dVOB3vuqErU" target="_blank" class="" id="level1">Clue</a> -->
             <a href="/" class="neon-button-red level-btn-width" id="level1">Back</a>
             <a href="/leaderboard/1" class="neon-button-blue level-btn-width" >leaderboard</a>
           </form>
     </div>
     <script src="/js/index.js"></script>
     <script src="/js/answerCheck.js"></script>
+    <script src="/js/clue-opener.js"></script>
 </body>
 </html>
