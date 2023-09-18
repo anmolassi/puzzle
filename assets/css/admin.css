@@ -38,7 +38,7 @@ table, th, td {
 th{
     color:var(--clr-neon-bl);
 }
-#delete-user-yes-no{
+#delete-user-yes-no, #add-ip-form{
     background-color: rgba(0,0,0,0.5);
     display: none;
     justify-content: center;

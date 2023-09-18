@@ -22,7 +22,9 @@ html{
     align-items: center;
 }
 .mini-logo{
-    font-family: fantasy;
+    /* font-family: fantasy; */
+    font-family: Georgia;
+    font-weight: 500;
     height: auto;
     width: auto;
     color: white;
