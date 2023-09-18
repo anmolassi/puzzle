@@ -17,8 +17,9 @@ module.exports.verifyUser = async function (req, res) {
       console.log(token);
       res.cookie("jwt", `${token}`, {
           httpOnly: true,
-          maxAge: 7 * 24 * 60 * 60 * 1000,
-          sameSite: 'strict'
+          maxAge: 2 * 24 * 60 * 60 * 1000,
+          sameSite: 'lax',
+          secure:true,
         });
       await verifyMail.deleteOne({_id:id});
       await gameProgress.create({
