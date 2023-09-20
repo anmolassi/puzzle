@@ -13,7 +13,12 @@ module.exports.homePage = async function (req, res) {
     ipaddress=ipaddress[0];
     console.log(ipaddress);
     const ipp=await ipDatabase.findOne({ipAddress:ipaddress});
-    if(ipp){
+    var openaccess=false;
+    if(!ipp){
+        const t=await ipDatabase.findOne({ipAddress:'0.0.0.0'});
+        if(t) openaccess=true;
+    }
+    if(ipp||openaccess){
         const token = req.cookies.jwt_admin;
         if (token) {
             const id=jwt.decode(token,{complete:true}).payload._id;
@@ -47,7 +52,12 @@ module.exports.logIn = async function (req, res) {
     ipaddress=ipaddress[0];
     console.log(ipaddress);
     const ipp=await ipDatabase.findOne({ipAddress:ipaddress});
-    if(ipp){
+    var openaccess=false;
+    if(!ipp){
+        const t=await ipDatabase.findOne({ipAddress:'0.0.0.0'});
+        if(t) openaccess=true;
+    }
+    if(ipp||openaccess){
         if(req.body.email=='admin@gmail.com'){
             const userr = await User.findOne({ email: req.body.email });
             const matchPassword = await bcrypt.compare(req.body.password,userr.password);
@@ -86,7 +96,12 @@ module.exports.adminDetails = async function (req, res) {
     ipaddress=ipaddress[0];
     console.log(ipaddress);
     const ipp=await ipDatabase.findOne({ipAddress:ipaddress});
-    if(ipp){
+    var openaccess=false;
+    if(!ipp){
+        const t=await ipDatabase.findOne({ipAddress:'0.0.0.0'});
+        if(t) openaccess=true;
+    }
+    if(ipp||openaccess){
         const token = req.cookies.jwt_admin;
         if (token) {
             const userr = await User.findOne({
@@ -130,7 +145,12 @@ module.exports.locations = async function (req, res) {
     ipaddress=ipaddress[0];
     console.log(ipaddress);
     const ipp=await ipDatabase.findOne({ipAddress:ipaddress});
-    if(ipp){
+    var openaccess=false;
+    if(!ipp){
+        const t=await ipDatabase.findOne({ipAddress:'0.0.0.0'});
+        if(t) openaccess=true;
+    }
+    if(ipp||openaccess){
         const token = req.cookies.jwt_admin;
         if (token) {
             const userr = await User.findOne({
@@ -162,7 +182,12 @@ module.exports.deleteUser=async function(req,res){
     ipaddress=ipaddress[0];
     console.log(ipaddress);
     const ipp=await ipDatabase.findOne({ipAddress:ipaddress});
-    if(ipp){
+    var openaccess=false;
+    if(!ipp){
+        const t=await ipDatabase.findOne({ipAddress:'0.0.0.0'});
+        if(t) openaccess=true;
+    }
+    if(ipp||openaccess){
         const token = req.cookies.jwt_admin;
         if (token) {
             const userr = await User.findOne({
@@ -198,7 +223,12 @@ module.exports.addLocation=async function(req,res){
     ipaddress=ipaddress[0];
     console.log(ipaddress);
     const ipp=await ipDatabase.findOne({ipAddress:ipaddress});
-    if(ipp){
+    var openaccess=false;
+    if(!ipp){
+        const t=await ipDatabase.findOne({ipAddress:'0.0.0.0'});
+        if(t) openaccess=true;
+    }
+    if(ipp||openaccess){
         const token = req.cookies.jwt_admin;
         if (token) {
             const userr = await User.findOne({
@@ -236,7 +266,12 @@ module.exports.deleteLocation=async function(req,res){
     ipaddress=ipaddress[0];
     console.log(ipaddress);
     const ipp=await ipDatabase.findOne({ipAddress:ipaddress});
-    if(ipp){
+    var openaccess=false;
+    if(!ipp){
+        const t=await ipDatabase.findOne({ipAddress:'0.0.0.0'});
+        if(t) openaccess=true;
+    }
+    if(ipp||openaccess){
         const token = req.cookies.jwt_admin;
         if (token) {
             const userr = await User.findOne({
