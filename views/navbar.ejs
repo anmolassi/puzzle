@@ -6,7 +6,7 @@
     </div>
     <div class="auth-links">
             <% if (locals.user){ %>
-                <a href="" class="profile-name"><%= user.first_name %>&nbsp;<%= user.last_name %></a>
+                <a href="" class="profile-name"><%= user.first_name %></a>
         
                 <a href="/logout" class="neon-btn-nav">Sign Out</a>
             <% }else{ %>
