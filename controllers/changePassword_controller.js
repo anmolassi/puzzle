@@ -39,6 +39,10 @@ module.exports.pageToChangePassword=async function(req,res){
 }
 
 module.exports.setNewPassword=async function(req,res){
+  if(req.body.new_password==undefined||req.body.user_id==undefined){
+    res.render('oversmart');
+    return;
+  }
   const user=await User.findOneAndUpdate({_id:req.body.user_id},{password:await bcrypt.hash(req.body.new_password, 10)},{new:true});
   console.log(user);
   const token = await user.generateAuthToken();

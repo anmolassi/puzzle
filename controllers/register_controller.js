@@ -11,6 +11,10 @@ module.exports.registerForm = function (req, res) {
 
 module.exports.register = async function (req, res) {
   console.log(req.body.password);
+  if(req.body.first_name==undefined||req.body.last_name==undefined||req.body.password==undefined||req.body.confirm_password==undefined||req.body.email==undefined){
+    res.render('oversmart');
+    return;
+  }
   if(!req.body.email.match(validRegex)){
     res.render('oversmart');
     return;

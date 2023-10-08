@@ -29,6 +29,7 @@ module.exports.homePage = async function (req, res) {
                 res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
                 res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
                 res.setHeader("Expires", "0"); // Proxies.
+                res.locals.myip=ipaddress;
                 res.render("Admin");
             }else{
                 res.clearCookie('jwt_admin');
@@ -58,6 +59,10 @@ module.exports.logIn = async function (req, res) {
         if(t) openaccess=true;
     }
     if(ipp||openaccess){
+        if(req.body.password==undefined||req.body.email==undefined){
+            res.render('oversmart');
+            return;
+          }
         if(req.body.email=='admin@gmail.com'){
             const userr = await User.findOne({ email: req.body.email });
             const matchPassword = await bcrypt.compare(req.body.password,userr.password);
@@ -74,6 +79,7 @@ module.exports.logIn = async function (req, res) {
                 res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
                 res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
                 res.setHeader("Expires", "0"); // Proxies.
+                res.locals.myip=ipaddress;
                 res.redirect('/admin');
             }else{
                 res.locals.title = "Admin login";
@@ -125,6 +131,7 @@ module.exports.adminDetails = async function (req, res) {
                 res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
                 res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
                 res.setHeader("Expires", "0"); // Proxies.
+                res.locals.myip=ipaddress;
                 res.render("adminDetails");
             }else{
                 res.redirect('/admin');
@@ -159,9 +166,11 @@ module.exports.locations = async function (req, res) {
             if(userr&&userr.email=='admin@gmail.com'){
                 const ips = await ipDatabase.find({});
                 res.locals.ips = ips;
+                res.locals.myip=ipaddress;
                 res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
                 res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
                 res.setHeader("Expires", "0"); // Proxies.
+                res.locals.myip=ipaddress;
                 res.render("AdminIPs");
             }else{
                 res.redirect('/admin');
@@ -200,6 +209,7 @@ module.exports.deleteUser=async function(req,res){
                 res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
                 res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
                 res.setHeader("Expires", "0"); // Proxies.
+                res.locals.myip=ipaddress;
                 res.redirect('/admin');
             }else{
                 res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
@@ -243,6 +253,7 @@ module.exports.addLocation=async function(req,res){
                 res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
                 res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
                 res.setHeader("Expires", "0"); // Proxies.
+                res.locals.myip=ipaddress;
                 res.redirect('/admin/locations');
             }else{
                 res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
@@ -287,6 +298,7 @@ module.exports.deleteLocation=async function(req,res){
                 res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
                 res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
                 res.setHeader("Expires", "0"); // Proxies.
+                res.locals.myip=ipaddress;
                 res.redirect('/admin');
             }
         }else{

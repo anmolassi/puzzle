@@ -24,6 +24,10 @@ module.exports.logInForm = async function (req, res) {
 
 module.exports.logIn = async function (req, res) {
   // console.log(req.body);
+  if(req.body.email==undefined||req.body.password==undefined){
+    res.render('oversmart');
+    return;
+  }
   const userr = await user.findOne({ email: req.body.email });
   console.log("WOW!!!!!!!");
   if (userr&&userr.email!='admin@gmail.com') {

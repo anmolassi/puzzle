@@ -4,6 +4,10 @@ const resetPassword=require('../models/reset_password');
 const crypto = require("crypto");
 module.exports.generateForgotMail=async function(req,res){
     try {
+        if(req.body.email==undefined){
+          res.render('oversmart');
+          return;
+        }
         let token = crypto.randomBytes(20).toString("hex");
         let userr = await User.findOne({ email: req.body.email });
         if (userr) {
