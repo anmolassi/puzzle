@@ -45,7 +45,7 @@ function timerAndSuccess(){
     let answerSubmitted = document.getElementById("answer").value;
     let level = document.getElementById("level").value;
     $.ajax({
-      url: `https://anmol-assi-puzzle.azurewebsites.net/level${level}/`,
+      url: `${process.env.WEB_URL}/level${level}/`,
       // url: `http://localhost:8080/level${level}/`,
 
       type: "post",

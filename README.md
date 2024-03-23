@@ -1,5 +1,5 @@
 # puzzle
-## https://anmol-assi-puzzle.azurewebsites.net/
+## https://anmol-assi-puzzle-game.azurewebsites.net/
 ### Puzzles
 The puzzles on this website challenges user's capability to relate the things being spoken or shown in the clues with the question to reach the correct answer.
 ### How to step up project?

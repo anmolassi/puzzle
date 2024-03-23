@@ -6,7 +6,7 @@
 // email.addEventListener("keyup", function () {
 //   if (email.value.match(validRegex)) {
 //     $.ajax({
-//         url: `https://anmol-assi-puzzle.azurewebsites.net/emailCheck/${email.value}`,
+//         url: `${process.env.WEB_URL}/emailCheck/${email.value}`,
 //         // url: `http://localhost:5000/emailCheck/${email.value}`,
 //         type: "get",
 //         beforeSend: function () {
